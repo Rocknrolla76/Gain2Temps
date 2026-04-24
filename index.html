@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gain2Temps — Automatisation & Intelligence Artificielle à Pau et Nay</title>
+  <title>Gain2Temps - Automatisation & Intelligence Artificielle à Pau et Nay</title>
   <meta name="description" content="Gain2Temps : services d'automatisation, intelligence artificielle, création de contenu et pages web pour TPE, artisans et indépendants à Pau, Nay et le Béarn. Offre de lancement gratuite." />
   <meta name="keywords" content="intelligence artificielle, IA, automatisation, TPE, artisans, Pau, Nay, Béarn, création contenu, page web, devis automatique, gain de temps" />
   <meta property="og:title" content="Gain2Temps — L'IA au service de votre métier" />
@@ -147,26 +147,28 @@
       section{padding:4rem 4%}.hero{padding:8rem 4% 4rem}
       .cwrap{grid-template-columns:1fr;gap:2.5rem}
       .frow{grid-template-columns:1fr}
-      footer{padding:1.5rem 4%;flex-direction:column;text-align:center;margin-bottom:5rem}
+      footer{padding:1.5rem 4%;flex-direction:column;text-align:center}
     }
 
-    .mobile-cta{display:none}
-    @media(max-width:768px){
-      .mobile-cta{
-        display:flex;position:fixed;bottom:1.2rem;left:50%;transform:translateX(-50%);
-        z-index:200;background:#0f0f1a;color:#fff !important;
-        padding:.85rem 2rem;border-radius:100px;font-size:.9rem;font-weight:700;
-        text-decoration:none;white-space:nowrap;
-        box-shadow:0 8px 30px rgba(0,0,0,.3);
-        align-items:center;gap:.5rem;
-      }
-    }
+    /* HAMBURGER MOBILE */
+    .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:.4rem;background:none;border:none;z-index:300}
+    .hamburger span{display:block;width:22px;height:2px;background:var(--dark);border-radius:2px;transition:all .3s}
+    .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .hamburger.open span:nth-child(2){opacity:0}
+    .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(255,255,255,.97);backdrop-filter:blur(16px);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:2rem}
+    .mobile-menu.open{display:flex}
+    .mobile-menu a{font-size:1.5rem;font-weight:700;color:var(--dark);text-decoration:none;letter-spacing:-.02em;transition:opacity .2s}
+    .mobile-menu a:hover{opacity:.6}
+    .mobile-menu .mm-cta{background:var(--dark);color:#fff !important;padding:.85rem 2.2rem;border-radius:100px;font-size:1.1rem}
+    @media(max-width:768px){.hamburger{display:flex}}
   </style>
 </head>
 <body>
 
 <nav>
   <a href="#accueil" class="nav-logo">Gain<span class="grad">2</span>Temps</a>
+  <button class="hamburger" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button>
   <div class="nav-links">
     <a href="#services">Services</a>
     <a href="#exemples">Exemples</a>
@@ -297,6 +299,21 @@
 </footer>
 
 <script>
+
+  // Hamburger
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => {
+    menuBtn.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      menuBtn.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
+  });
+
   const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){x.target.classList.add('vis');obs.unobserve(x.target)} }), {threshold:.1});
   document.querySelectorAll('.fu').forEach(el => obs.observe(el));
 
@@ -330,6 +347,9 @@
   });
 </script>
 
-<a href="#lancement" class="mobile-cta">🎁 Offre gratuite →</a>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" class="mm-link">Services</a>
+  <a href="#lancement" class="mm-cta btn-dark">🎁 Offre gratuite</a>
+</div>
 </body>
 </html>
