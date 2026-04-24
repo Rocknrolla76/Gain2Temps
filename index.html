@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gain2Temps - Automatisation & Intelligence Artificielle à Pau et Nay</title>
+  <title>Gain2Temps — Automatisation & Intelligence Artificielle à Pau et Nay</title>
   <meta name="description" content="Gain2Temps : services d'automatisation, intelligence artificielle, création de contenu et pages web pour TPE, artisans et indépendants à Pau, Nay et le Béarn. Offre de lancement gratuite." />
   <meta name="keywords" content="intelligence artificielle, IA, automatisation, TPE, artisans, Pau, Nay, Béarn, création contenu, page web, devis automatique, gain de temps" />
-  <meta property="og:title" content="Gain2Temps - L'IA au service de votre métier" />
+  <meta property="og:title" content="Gain2Temps — L'IA au service de votre métier" />
   <meta property="og:description" content="Automatisation, création de contenu, pages web et documents intelligents pour les pros du Béarn. Offre de lancement 100% gratuite." />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -15,7 +15,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>emailjs.init('tx7Dbtr6JypewJUj9');</script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"LocalBusiness","name":"Gain2Temps","description":"Services d'intelligence artificielle et automatisation pour TPE, artisans et indépendants à Pau, Nay et le Béarn.","areaServed":["Pau","Nay","Lourdes","Tarbes","Béarn","Pyrénées-Atlantiques"],"serviceType":["Automatisation IA","Création de contenu","Page web","Documents automatiques"]}
+  {"@context":"https://schema.org","@type":"LocalBusiness","name":"Gain2Temps","description":"Services d'intelligence artificielle et automatisation pour TPE, artisans et indépendants à Pau, Nay et le Béarn.","areaServed":["Pau","Nay","Béarn","Pyrénées-Atlantiques"],"serviceType":["Automatisation IA","Création de contenu","Page web","Documents automatiques"]}
   </script>
   <style>
     :root {
@@ -147,7 +147,19 @@
       section{padding:4rem 4%}.hero{padding:8rem 4% 4rem}
       .cwrap{grid-template-columns:1fr;gap:2.5rem}
       .frow{grid-template-columns:1fr}
-      footer{padding:1.5rem 4%;flex-direction:column;text-align:center}
+      footer{padding:1.5rem 4%;flex-direction:column;text-align:center;margin-bottom:5rem}
+    }
+
+    .mobile-cta{display:none}
+    @media(max-width:768px){
+      .mobile-cta{
+        display:flex;position:fixed;bottom:1.2rem;left:50%;transform:translateX(-50%);
+        z-index:200;background:#0f0f1a;color:#fff !important;
+        padding:.85rem 2rem;border-radius:100px;font-size:.9rem;font-weight:700;
+        text-decoration:none;white-space:nowrap;
+        box-shadow:0 8px 30px rgba(0,0,0,.3);
+        align-items:center;gap:.5rem;
+      }
     }
   </style>
 </head>
@@ -317,5 +329,7 @@
       });
   });
 </script>
+
+<a href="#lancement" class="mobile-cta">🎁 Offre gratuite →</a>
 </body>
 </html>
