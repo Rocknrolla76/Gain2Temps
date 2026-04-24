@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gain2Temps - Automatisation & Intelligence Artificielle à Pau et Nay</title>
+  <title>Gain2Temps — Automatisation & Intelligence Artificielle à Pau et Nay</title>
   <meta name="description" content="Gain2Temps : services d'automatisation, intelligence artificielle, création de contenu et pages web pour TPE, artisans et indépendants à Pau, Nay et le Béarn. Offre de lancement gratuite." />
   <meta name="keywords" content="intelligence artificielle, IA, automatisation, TPE, artisans, Pau, Nay, Béarn, création contenu, page web, devis automatique, gain de temps" />
   <meta property="og:title" content="Gain2Temps — L'IA au service de votre métier" />
@@ -156,8 +156,8 @@
     .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
     .hamburger.open span:nth-child(2){opacity:0}
     .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-    .mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(255,255,255,.97);backdrop-filter:blur(16px);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:2rem}
-    .mobile-menu.open{display:flex}
+    .mobile-menu{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(255,255,255,.97);backdrop-filter:blur(16px);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:2rem;display:flex;opacity:0;pointer-events:none;transition:opacity .25s ease}
+    .mobile-menu.open{opacity:1;pointer-events:all}
     .mobile-menu a{font-size:1.5rem;font-weight:700;color:var(--dark);text-decoration:none;letter-spacing:-.02em;transition:opacity .2s}
     .mobile-menu a:hover{opacity:.6}
     .mobile-menu .mm-cta{background:var(--dark);color:#fff !important;padding:.85rem 2.2rem;border-radius:100px;font-size:1.1rem}
