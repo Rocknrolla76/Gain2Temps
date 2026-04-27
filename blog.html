@@ -4,7 +4,7 @@
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <title>Blog IA & Automatisation — Gain2Temps</title>
-  <meta name="description" content="Nos prestations détaillées et actualités — automatisation IA pour les TPE et PME de Pau, Tarbes, Lourdes et Nay." />
+  <meta name="description" content="Nos actualités — automatisation IA pour les particuliers, TPE et PME de Pau, Tarbes, Lourdes, Biarritz et Nay." />
   <meta name="robots" content="index, follow" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -52,23 +52,19 @@
     /* CARTE */
     .art-card{display:block;text-decoration:none;border:1px solid var(--border);border-radius:18px;overflow:hidden;background:var(--white);transition:border-color .2s,box-shadow .2s,transform .2s}
     .art-card:hover{border-color:#c4b5fd;box-shadow:0 8px 28px rgba(167,139,250,.12);transform:translateY(-2px)}
-    .art-thumb{height:110px;display:flex;align-items:center;justify-content:center;font-size:2.2rem}
+    /* CARTES — taille uniforme, hauteur fixe via flexbox */
+    .art-card{display:flex !important;flex-direction:column}
+    .art-thumb{height:100px;display:flex;align-items:center;justify-content:center;font-size:2rem;flex-shrink:0}
     .thumb-prestation{background:linear-gradient(135deg,#eef2ff,#dde4ff)}
     .thumb-actu{background:linear-gradient(135deg,#fff4ee,#ffe0cc)}
-    .art-card-body{padding:1.4rem}
-    .art-badge{display:inline-flex;align-items:center;gap:.3rem;border-radius:100px;padding:.28rem .75rem;font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:.65rem}
+    .art-card-body{padding:1.2rem 1.3rem;display:flex;flex-direction:column;flex:1}
+    .art-badge{display:inline-flex;align-items:center;gap:.3rem;border-radius:100px;padding:.28rem .75rem;font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:.6rem}
     .badge-prestation{background:rgba(110,198,245,.1);border:1px solid rgba(110,198,245,.3);color:#2a7aba}
     .badge-actu{background:var(--ora-bg);border:1px solid #ffd0b5;color:var(--ora)}
-    .art-card-body h3{font-size:.88rem;font-weight:700;letter-spacing:-.02em;color:var(--dark);line-height:1.35;margin-bottom:.45rem}
-    .art-card-body p{font-size:.78rem;color:var(--mid);line-height:1.55;margin-bottom:.8rem}
-    .art-meta{display:flex;align-items:center;gap:.55rem;font-size:.72rem;color:var(--light)}
+    .art-card-body h3{font-size:.88rem;font-weight:700;letter-spacing:-.02em;color:var(--dark);line-height:1.4;margin-bottom:.4rem}
+    .art-card-body p{font-size:.78rem;color:var(--mid);line-height:1.55;margin-bottom:.75rem;flex:1}
+    .art-meta{display:flex;align-items:center;gap:.55rem;font-size:.72rem;color:var(--light);margin-top:auto}
     .art-meta-dot{width:3px;height:3px;background:var(--light);border-radius:50%;flex-shrink:0}
-    /* FEATURED — 1ère carte de chaque groupe */
-    .art-card.featured{grid-column:1/-1;display:grid;grid-template-columns:200px 1fr}
-    @media(max-width:560px){.art-card.featured{grid-template-columns:1fr;display:block}}
-    .art-card.featured .art-thumb{height:100%;min-height:140px}
-    .art-card.featured .art-card-body h3{font-size:1rem}
-    .art-card.featured .art-card-body p{font-size:.85rem}
     /* PLACEHOLDER */
     .art-placeholder{border:1.5px dashed var(--border);border-radius:18px;padding:1.8rem;text-align:center;background:var(--bg)}
     .art-placeholder p{font-size:.76rem;color:var(--light);font-style:italic;line-height:1.6}
@@ -345,8 +341,18 @@
 
 <script>
 // ── Newsletter → Google Sheets ─────────────────────────
-// ⚠️  REMPLACE L'URL CI-DESSOUS par l'URL de ton déploiement Apps Script
-//     (Extensions → Apps Script → Déployer → Nouveau déploiement → App Web)
+// Utilise GET (plus fiable que POST avec Apps Script depuis un navigateur).
+// ⚠️  IMPORTANT : dans ton Apps Script, remplace doPost par doGet :
+//
+//   function doGet(e) {
+//     const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+//     sheet.appendRow([new Date().toLocaleString('fr-FR'), e.parameter.email]);
+//     return ContentService
+//       .createTextOutput(JSON.stringify({ result: 'ok' }))
+//       .setMimeType(ContentService.MimeType.JSON);
+//   }
+//
+// Puis : Déployer → Gérer les déploiements → crayon → Accès "Tout le monde" → Enregistrer.
 const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwnh4zsxuGe1V80-e9Pcnzi7dcGjaZrtIWA3--1d7AnYhNw9X16x1QUS0Zawciu7Q5hSA/exec';
 
 async function nlSubmit() {
@@ -371,13 +377,13 @@ async function nlSubmit() {
   try {
     // no-cors : Google Apps Script n'envoie pas les headers CORS nécessaires
     // La requête part quand même et s'enregistre dans le sheet.
-    await fetch(SHEET_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: 'email=' + encodeURIComponent(email)
+    // GET + no-cors : méthode la plus fiable avec Google Apps Script
+    // Le script reçoit e.parameter.email via l'URL
+    await fetch(SHEET_URL + '?email=' + encodeURIComponent(email), {
+      method: 'GET',
+      mode: 'no-cors'
     });
-    // Avec no-cors on ne peut pas lire la réponse — on considère que c'est ok
+    // no-cors = réponse opaque, on ne peut pas la lire — on affiche le succès
     document.getElementById('nl-form').style.display    = 'none';
     document.getElementById('nl-success').style.display = 'block';
   } catch (err) {
