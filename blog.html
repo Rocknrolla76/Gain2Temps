@@ -41,30 +41,25 @@
     .blog-layout{max-width:1180px;margin:0 auto;padding:3.5rem 5%;display:grid;grid-template-columns:1fr 300px;gap:4rem;align-items:start}
     @media(max-width:900px){.blog-layout{grid-template-columns:1fr}.sidebar{order:2}}
     /* GROUPES */
-    .articles-group{margin-bottom:3rem}
-    .articles-group:last-child{margin-bottom:0}
-    .section-head{display:flex;align-items:baseline;gap:.8rem;margin-bottom:1.4rem;padding-bottom:.75rem;border-bottom:1.5px solid var(--border)}
-    .section-head h2{font-size:1.05rem;font-weight:800;letter-spacing:-.02em}
-    .section-head .count-label{font-size:.75rem;color:var(--light)}
+    /* grille unique — pas de sous-groupes */
     /* GRILLE */
     .articles-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
     @media(max-width:560px){.articles-grid{grid-template-columns:1fr}}
     /* CARTE */
-    .art-card{display:block;text-decoration:none;border:1px solid var(--border);border-radius:18px;overflow:hidden;background:var(--white);transition:border-color .2s,box-shadow .2s,transform .2s}
-    a.art-card:hover{border-color:#c4b5fd;box-shadow:0 8px 28px rgba(167,139,250,.12);transform:translateY(-2px)}
-    /* CARTES — taille uniforme, hauteur fixe via flexbox */
-    .art-card{display:flex !important;flex-direction:column}
+    /* CARTES — bordure gauche colorée selon le type */
+    .art-card{display:flex !important;flex-direction:column;text-decoration:none;border:1px solid var(--border);border-left:3px solid var(--border);border-radius:18px;overflow:hidden;background:var(--white);transition:box-shadow .2s,transform .2s}
     div.art-card{cursor:default}
     a.art-card{cursor:pointer}
+    a.art-card:hover{box-shadow:0 8px 28px rgba(0,0,0,.08);transform:translateY(-2px)}
+    /* Couleur bordure gauche par catégorie */
+    article[data-type="prestation"] .art-card{border-left-color:#22c55e}
+    article[data-type="actu"]       .art-card{border-left-color:#ef4444}
+    article[data-type="reflexion"]  .art-card{border-left-color:#eab308}
     .art-thumb{height:100px;display:flex;align-items:center;justify-content:center;font-size:2rem;flex-shrink:0}
     .thumb-prestation{background:linear-gradient(135deg,#eef2ff,#dde4ff)}
     .thumb-actu{background:linear-gradient(135deg,#fff4ee,#ffe0cc)}
     .thumb-reflexion{background:linear-gradient(135deg,#f0fdf4,#dcfce7)}
     .art-card-body{padding:1.2rem 1.3rem;display:flex;flex-direction:column;flex:1}
-    .art-badge{display:inline-flex;align-items:center;gap:.3rem;border-radius:100px;padding:.28rem .75rem;font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:.6rem}
-    .badge-prestation{background:rgba(110,198,245,.1);border:1px solid rgba(110,198,245,.3);color:#2a7aba}
-    .badge-actu{background:var(--ora-bg);border:1px solid #ffd0b5;color:var(--ora)}
-    .badge-reflexion{background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);color:#15803d}
     .art-card-body h3{font-size:.88rem;font-weight:700;letter-spacing:-.02em;color:var(--dark);line-height:1.4;margin-bottom:.4rem}
     .art-card-body p{font-size:.78rem;color:var(--mid);line-height:1.55;margin-bottom:.75rem;flex:1}
     .art-meta{display:flex;align-items:center;gap:.55rem;font-size:.72rem;color:var(--light);margin-top:auto}
@@ -103,6 +98,9 @@
     footer p{font-size:.8rem;color:var(--light)}
     .flinks{display:flex;gap:1.5rem}
     .flinks a{font-size:.8rem;color:var(--light);text-decoration:none;transition:color .2s}.flinks a:hover{color:var(--dark)}
+    .c-prestation{background:linear-gradient(90deg,var(--gs),var(--gm));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .c-actu{background:linear-gradient(90deg,var(--gm),var(--ge));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .c-reflexion{background:linear-gradient(90deg,var(--gs),var(--ge));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
     @media(max-width:768px){nav{padding:1rem 4%}.nav-links{display:none}.blog-hero{padding:6rem 4% 3rem}.blog-layout{padding:2.5rem 4%}.filters-bar{padding:0 4%}}
   </style>
 </head>
@@ -122,7 +120,7 @@
   <div class="blob b1"></div><div class="blob b2"></div>
   <div class="hero-inner">
     <div class="hero-badge">Ressources</div>
-    <h1>Nos <span class="grad">prestations</span> et actualités</h1>
+    <h1>Nos <span class="c-prestation">prestations</span>, <span class="c-actu">actus</span> &amp; <span class="c-reflexion">réflexions</span></h1>
     <p>Tout ce qu'on fait, comment ça marche et les nouveautés Gain2Temps — pour les entreprises du Béarn et des Pyrénées.</p>
   </div>
 </div>
@@ -173,7 +171,6 @@
     <a href="blog/mon-article.html" class="art-card">
       <div class="art-thumb thumb-prestation">🔧</div>
       <div class="art-card-body">
-        <span class="art-badge badge-prestation">Prestation</span>
         <h3>Mon titre d'article</h3>
         <p>Un court extrait de 2 à 3 lignes qui donne envie de lire la suite.</p>
         <div class="art-meta">
@@ -184,70 +181,53 @@
   </article>
 ═══════════════════════════════════════════════════════ -->
 
-  <!-- ════ PRESTATIONS ════ -->
-  <div class="articles-group" id="group-prestation">
-    <div class="section-head">
-      <h2>Prestations</h2>
-      <span class="count-label" id="lbl-prestation"></span>
-    </div>
-    <div class="articles-grid">
+  <!-- ══════════════════════════════════════════════════════
+    GRILLE UNIQUE — tous les articles mélangés.
+    Le filtre du haut gère l'affichage par type.
 
-      <article data-type="prestation" data-date="2026-04-27">
-        <div class="art-card">
-          <div class="art-thumb thumb-prestation">📖</div>
-          <div class="art-card-body">
-            <span class="art-badge badge-prestation">Prestation</span>
-            <h3>Première réalisation client à Nay : une page web sur mesure pour accompagner un livre</h3>
-            <p>Un auteur local vient de publier son dernier livre. On a créé une page web sur mesure qui accompagne ses explications et donne des informations complémentaires à ses lecteurs — une belle première mission à domicile.</p>
-            <div class="art-meta"><span>27 avril 2026</span></div>
-          </div>
+    AJOUTER UN ARTICLE :
+    • Prestation (non cliquable) : <article data-type="prestation" data-date="YYYY-MM-DD"><div class="art-card">…</div></article>
+    • Actualité  (non cliquable) : <article data-type="actu"        data-date="YYYY-MM-DD"><div class="art-card">…</div></article>
+    • Réflexion  (cliquable)     : <article data-type="reflexion"   data-date="YYYY-MM-DD"><a href="blog/fichier.html" class="art-card">…</a></article>
+
+    Bordure gauche automatique : vert=prestation, rouge=actu, jaune=réflexion
+  ══════════════════════════════════════════════════════ -->
+  <div class="articles-grid" id="all-articles">
+
+    <article data-type="prestation" data-date="2026-04-27">
+      <div class="art-card">
+        <div class="art-thumb thumb-prestation">📖</div>
+        <div class="art-card-body">
+          <h3>Première réalisation client à Nay : une page web sur mesure pour accompagner un livre</h3>
+          <p>Un auteur local vient de publier son dernier livre. On a créé une page web sur mesure qui accompagne ses explications et donne des informations complémentaires à ses lecteurs — une belle première mission à domicile.</p>
+          <div class="art-meta"><span>27 avril 2026</span></div>
         </div>
-      </article>
-
-      <!-- Ajoutez vos prochaines prestations ici (div, pas a) -->
-
-    </div>
-  </div>
-
-  <!-- ════ ACTUALITÉS ════ -->
-  <div class="articles-group" id="group-actu">
-    <div class="section-head">
-      <h2>Actualités</h2>
-      <span class="count-label" id="lbl-actu"></span>
-    </div>
-    <div class="articles-grid">
-
-      <!-- Ajoutez vos actualités ici (div, pas a) -->
-      <div class="art-placeholder" data-type="actu">
-        <p>À venir — vos prochaines actualités</p>
       </div>
+    </article>
 
-    </div>
+    <article data-type="actu" data-date="2026-04-27">
+      <div class="art-card">
+        <div class="art-thumb thumb-actu">🚀</div>
+        <div class="art-card-body">
+          <h3>Gain2Temps est lancé : offre 100% gratuite pour les premiers clients du Béarn</h3>
+          <p>On ouvre nos portes aux artisans, commerçants et indépendants de Pau, Nay, Tarbes et Lourdes. Première mission gratuite en échange d'un témoignage.</p>
+          <div class="art-meta"><span>27 avril 2026</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article data-type="reflexion" data-date="2026-04-27">
+      <a href="blog/vibe-coding-nouveau-paradigme.html" class="art-card">
+        <div class="art-thumb thumb-reflexion">🧠</div>
+        <div class="art-card-body">
+          <h3>Le vibe coding : un nouveau paradigme de la création numérique</h3>
+          <p>L'IA ne change pas juste nos outils — elle change notre façon de penser. On passe d'exécutant à architecte. On ne code plus ligne par ligne : on dialogue, on orchestre, on explore.</p>
+          <div class="art-meta"><span>27 avril 2026</span><div class="art-meta-dot"></div><span>2 min</span></div>
+        </div>
+      </a>
+    </article>
+
   </div>
-
-  <!-- ════ RÉFLEXIONS ════ -->
-  <div class="articles-group" id="group-reflexion">
-    <div class="section-head">
-      <h2>Réflexions</h2>
-      <span class="count-label" id="lbl-reflexion"></span>
-    </div>
-    <div class="articles-grid">
-
-      <article data-type="reflexion" data-date="2026-04-27">
-        <a href="blog/vibe-coding-nouveau-paradigme.html" class="art-card">
-          <div class="art-thumb thumb-reflexion">🧠</div>
-          <div class="art-card-body">
-            <span class="art-badge badge-reflexion">Réflexion</span>
-            <h3>Le vibe coding : un nouveau paradigme de la création numérique</h3>
-            <p>L'IA ne change pas juste nos outils — elle change notre façon de penser. On passe d'exécutant à architecte. On ne code plus ligne par ligne : on dialogue, on orchestre, on explore.</p>
-            <div class="art-meta"><span>27 avril 2026</span><div class="art-meta-dot"></div><span>2 min</span></div>
-          </div>
-        </a>
-      </article>
-
-    </div>
-  </div>
-  <!-- ════ FIN GROUPE RÉFLEXIONS ════ -->
 
 </main>
 
@@ -322,7 +302,7 @@
 // Puis : Déployer → Gérer les déploiements → crayon → Accès "Tout le monde" → Enregistrer.
 const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwnh4zsxuGe1V80-e9Pcnzi7dcGjaZrtIWA3--1d7AnYhNw9X16x1QUS0Zawciu7Q5hSA/exec';
 
-async function nlSubmit() {
+function nlSubmit() {
   const emailInput = document.getElementById('nl-email');
   const btn        = document.getElementById('nl-btn');
   const errDiv     = document.getElementById('nl-error');
@@ -337,55 +317,39 @@ async function nlSubmit() {
   emailInput.style.borderColor = '';
   errDiv.style.display = 'none';
 
-  // État chargement
   btn.disabled = true;
   btn.textContent = 'Envoi…';
 
-  try {
-    // no-cors : Google Apps Script n'envoie pas les headers CORS nécessaires
-    // La requête part quand même et s'enregistre dans le sheet.
-    // GET + no-cors : méthode la plus fiable avec Google Apps Script
-    // Le script reçoit e.parameter.email via l'URL
-    await fetch(SHEET_URL + '?email=' + encodeURIComponent(email), {
-      method: 'GET',
-      mode: 'no-cors'
-    });
-    // no-cors = réponse opaque, on ne peut pas la lire — on affiche le succès
+  // new Image() : contourne CORS fiablement avec Google Apps Script.
+  // Le navigateur envoie le GET sans restriction — Apps Script reçoit e.parameter.email.
+  const img = new Image();
+  img.onload = img.onerror = function() {
     document.getElementById('nl-form').style.display    = 'none';
     document.getElementById('nl-success').style.display = 'block';
-  } catch (err) {
-    btn.disabled = false;
-    btn.textContent = 'S\'inscrire gratuitement';
-    errDiv.style.display = 'block';
-  }
+  };
+  img.src = SHEET_URL + '?email=' + encodeURIComponent(email);
 }
+
 
 
 function updateCounts() {
   const all         = document.querySelectorAll('article[data-type]').length;
   const prestations = document.querySelectorAll('article[data-type="prestation"]').length;
   const actus       = document.querySelectorAll('article[data-type="actu"]').length;
-
-  const reflexions = document.querySelectorAll('article[data-type="reflexion"]').length;
+  const reflexions  = document.querySelectorAll('article[data-type="reflexion"]').length;
   document.getElementById('cnt-all').textContent        = all;
   document.getElementById('cnt-prestation').textContent = prestations;
   document.getElementById('cnt-actu').textContent       = actus;
   document.getElementById('cnt-reflexion').textContent  = reflexions;
-  document.getElementById('lbl-prestation').textContent = prestations + ' article' + (prestations > 1 ? 's' : '');
-  document.getElementById('lbl-actu').textContent       = actus + ' article' + (actus > 1 ? 's' : '');
-  document.getElementById('lbl-reflexion').textContent  = reflexions + ' article' + (reflexions > 1 ? 's' : '');
 }
 
-// ── Filtre ─────────────────────────────────────────────
+// ── Filtre — agit article par article ──────────────────
 function filterCat(btn, cat) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  const gp = document.getElementById('group-prestation');
-  const ga = document.getElementById('group-actu');
-  const gr = document.getElementById('group-reflexion');
-  gp.style.display = (cat === 'all' || cat === 'prestation') ? '' : 'none';
-  ga.style.display = (cat === 'all' || cat === 'actu')       ? '' : 'none';
-  gr.style.display = (cat === 'all' || cat === 'reflexion')  ? '' : 'none';
+  document.querySelectorAll('#all-articles article[data-type]').forEach(art => {
+    art.style.display = (cat === 'all' || art.dataset.type === cat) ? '' : 'none';
+  });
 }
 
 // ── Sidebar "Récents" — triés par date DESC ────────────
