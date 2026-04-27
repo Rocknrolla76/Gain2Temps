@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <title>Automatisation IA à Tarbes — Gain2Temps</title>
+  <meta name="description" content="Gain2Temps : automatisation IA pour artisans, PME et TPE à Tarbes (65). Devis, relances, rapports — sans jargon, sans formation. Audit gratuit sur site." />
+  <meta name="robots" content="index, follow" /><link rel="canonical" href="https://gain2temps.fr/automatisation-ia-tarbes" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{--white:#ffffff;--bg:#f8f9ff;--bg-peach:#fff4ee;--dark:#0f0f1a;--mid:#4a4a6a;--light:#9090b0;--border:#e8e8f0;--gs:#6ec6f5;--gm:#a78bfa;--ge:#f472b6;--ora:#ff8c5a;--ora-bg:#fff0e8}
+    *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+    body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--white);color:var(--dark);overflow-x:hidden}
+    .grad{background:linear-gradient(90deg,var(--gs),var(--gm),var(--ge));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1rem 5%;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+    .nav-logo{font-size:1.25rem;font-weight:800;letter-spacing:-.03em;color:var(--dark);text-decoration:none}
+    .nav-links{display:flex;gap:2rem;align-items:center}
+    .nav-links a{font-size:.875rem;font-weight:500;color:var(--mid);text-decoration:none;transition:color .2s}.nav-links a:hover{color:var(--dark)}
+    .btn-dark{background:var(--dark);color:#fff !important;padding:.6rem 1.4rem;border-radius:100px;font-size:.875rem;font-weight:600;text-decoration:none;transition:opacity .2s,transform .2s;display:inline-flex;align-items:center;gap:.4rem;border:none;cursor:pointer;font-family:inherit}
+    .btn-dark:hover{opacity:.85;transform:translateY(-1px)}
+    .crumb{margin-top:72px;padding:.75rem 5%;background:var(--bg);border-bottom:1px solid var(--border);font-size:.78rem;color:var(--light)}
+    .crumb a{color:var(--mid);text-decoration:none}.crumb a:hover{color:var(--dark)}.crumb span{margin:0 .4rem;opacity:.4}
+    .hero{padding:5rem 5% 4rem;background:linear-gradient(180deg,#eef2ff 0%,#faf5ff 60%,#fff 100%);text-align:center;position:relative;overflow:hidden}
+    .blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.35;pointer-events:none}
+    .b1{width:420px;height:420px;background:radial-gradient(circle,#c7d2fe,#a5b4fc);top:-80px;left:-60px}
+    .b2{width:320px;height:320px;background:radial-gradient(circle,#fbcfe8,#f9a8d4);top:20px;right:-40px}
+    .hero-tag{position:relative;z-index:1;display:inline-flex;align-items:center;gap:.4rem;background:#fff;border:1px solid var(--border);border-radius:100px;padding:.4rem 1rem;font-size:.78rem;font-weight:600;color:var(--mid);margin-bottom:1.8rem;box-shadow:0 2px 12px rgba(0,0,0,.05)}
+    .hero h1{position:relative;z-index:1;font-size:clamp(2rem,4.5vw,3.4rem);font-weight:800;line-height:1.1;letter-spacing:-.04em;margin-bottom:1.2rem;max-width:720px;margin-left:auto;margin-right:auto}
+    .hero-sub{position:relative;z-index:1;font-size:1rem;color:var(--mid);line-height:1.7;max-width:520px;margin:0 auto 2.2rem}
+    .hero-actions{position:relative;z-index:1;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+    .btn-outline{background:transparent;color:var(--dark);padding:.6rem 1.4rem;border-radius:100px;font-size:.875rem;font-weight:600;text-decoration:none;border:1.5px solid var(--border);transition:border-color .2s,background .2s;display:inline-flex;align-items:center;gap:.4rem}
+    .btn-outline:hover{border-color:var(--dark);background:var(--bg)}
+    /* IDÉE REÇUE */
+    .idee{background:var(--dark);padding:2.5rem 5%;text-align:center}
+    .idee blockquote{font-size:clamp(1rem,2.5vw,1.4rem);font-weight:700;color:rgba(255,255,255,.3);font-style:italic;margin-bottom:.8rem}
+    .idee p{font-size:.95rem;color:rgba(255,255,255,.7);max-width:620px;margin:0 auto;line-height:1.7}
+    .idee p strong{color:var(--gs)}
+    section{padding:5rem 5%}
+    .stag{display:inline-flex;align-items:center;gap:.4rem;background:var(--ora-bg);border:1px solid #ffd0b5;border-radius:100px;padding:.35rem .9rem;font-size:.75rem;font-weight:600;color:var(--ora);margin-bottom:1.2rem}
+    h2{font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:800;letter-spacing:-.04em;line-height:1.15;margin-bottom:.9rem}
+    .ssub{font-size:.95rem;color:var(--mid);line-height:1.7;max-width:520px;margin-bottom:3rem}
+    .cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem}
+    .cases-bg{background:var(--bg-peach)}
+    .ccard{background:#fff;border:1px solid #ffd0b5;border-radius:20px;padding:1.8rem;transition:transform .2s,box-shadow .2s}
+    .ccard:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.07)}
+    .ccard-icon{font-size:2rem;margin-bottom:.8rem}
+    .ccard h3{font-size:.95rem;font-weight:700;margin-bottom:.6rem;letter-spacing:-.02em}
+    .ccard p{font-size:.85rem;color:var(--mid);line-height:1.6}
+    .ccard-gain{display:inline-block;margin-top:.9rem;background:rgba(110,198,245,.12);border:1px solid rgba(110,198,245,.3);border-radius:100px;padding:.3rem .8rem;font-size:.75rem;font-weight:600;color:#2a7aba}
+    .tags-wrap{display:flex;flex-wrap:wrap;gap:.7rem}
+    .tag{background:#fff;border:1px solid #ffd0b5;border-radius:100px;padding:.45rem 1rem;font-size:.82rem;font-weight:500;color:var(--dark)}
+    .temo-placeholder{background:var(--bg);border:1.5px dashed var(--border);border-radius:18px;padding:3rem;text-align:center;max-width:500px;margin:0 auto}
+    .temo-placeholder p{color:var(--mid);font-size:.85rem;font-style:italic}
+    .temo-placeholder a{display:inline-block;margin-top:1rem;background:linear-gradient(90deg,var(--gs),var(--gm));color:#fff;font-weight:700;padding:.7rem 1.6rem;border-radius:100px;text-decoration:none;font-size:.82rem;-webkit-text-fill-color:#fff}
+    .cta-final{background:linear-gradient(135deg,#6ec6f5 0%,#a78bfa 50%,#f472b6 100%);text-align:center}
+    .cta-final h2{color:#fff;-webkit-text-fill-color:#fff;margin-bottom:.8rem}
+    .cta-final p{color:rgba(255,255,255,.85);font-size:.95rem;max-width:460px;margin:0 auto 2rem}
+    .btn-white{background:#fff;color:var(--dark);padding:.85rem 2.2rem;border-radius:100px;font-size:.95rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:opacity .2s,transform .2s}
+    .btn-white:hover{opacity:.9;transform:translateY(-2px)}
+    footer{background:var(--bg);border-top:1px solid var(--border);padding:2rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+    .flogo{font-size:1.1rem;font-weight:800;letter-spacing:-.03em}
+    footer p{font-size:.8rem;color:var(--light)}
+    .flinks{display:flex;gap:1.5rem}
+    .flinks a{font-size:.8rem;color:var(--light);text-decoration:none;transition:color .2s}.flinks a:hover{color:var(--dark)}
+    .fu{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}.fu.vis{opacity:1;transform:translateY(0)}
+    @media(max-width:768px){nav{padding:1rem 4%}.nav-links{display:none}section{padding:3.5rem 4%}.hero{padding:4rem 4% 3rem}}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Gain<span class="grad">2</span>Temps</a>
+  <div class="nav-links">
+    <a href="index.html#services">Services</a><a href="index.html#exemples">Exemples</a>
+    <a href="blog.html">Blog</a><a href="index.html#contact" class="btn-dark">Audit gratuit →</a>
+  </div>
+</nav>
+<div class="crumb"><a href="index.html">Accueil</a><span>›</span><a href="index.html#zones">Zones</a><span>›</span>Tarbes</div>
+<header class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <div class="hero-tag">📍 Tarbes — Hautes-Pyrénées (65)</div>
+  <h1>Automatisation <span class="grad">IA</span> pour les artisans et PME de Tarbes</h1>
+  <p class="hero-sub">L'IA n'est pas réservée aux grandes entreprises. Les TPE et artisans de Tarbes peuvent automatiser devis, relances et rapports dès maintenant — sans jargon, sans formation.</p>
+  <div class="hero-actions">
+    <a href="index.html#contact" class="btn-dark">Demander un audit gratuit →</a>
+    <a href="#cas" class="btn-outline">Voir les cas d'usage</a>
+  </div>
+</header>
+<!-- IDÉE REÇUE -->
+<div class="idee">
+  <blockquote>"L'IA, c'est pour les grandes boîtes, pas pour nous."</blockquote>
+  <p>On entend souvent ça à Tarbes. Pourtant, <strong>c'est exactement l'inverse.</strong> Les artisans et petites entreprises ont tout à gagner : peu de temps, beaucoup de tâches répétitives, chaque heure économisée a une valeur directe.</p>
+</div>
+<!-- CAS D'USAGE -->
+<section class="cases-bg" id="cas">
+  <div class="fu"><div class="stag">💡 Cas concrets</div><h2>Ce que l'IA fait pour <span class="grad">votre activité à Tarbes</span></h2><p class="ssub">Des automatisations simples, déployées rapidement, sans perturber votre façon de travailler.</p></div>
+  <div class="cgrid fu">
+    <div class="ccard"><div class="ccard-icon">📋</div><h3>Génération de devis automatique</h3><p>Depuis un formulaire de prise de commande, l'IA génère un devis formaté et personnalisé en quelques secondes. Fini les saisies manuelles.</p><span class="ccard-gain">⏱ −3h/semaine</span></div>
+    <div class="ccard"><div class="ccard-icon">📞</div><h3>Relances clients automatisées</h3><p>Devis non acceptés, factures impayées, suivis chantier — les relances partent automatiquement au bon moment, sans que vous y pensiez.</p><span class="ccard-gain">⏱ −2h/semaine</span></div>
+    <div class="ccard"><div class="ccard-icon">📊</div><h3>Rapports d'activité automatiques</h3><p>Un résumé de votre semaine généré automatiquement chaque lundi matin dans votre boîte mail. Zéro compilation manuelle.</p><span class="ccard-gain">⏱ −2h/semaine</span></div>
+    <div class="ccard"><div class="ccard-icon">🔩</div><h3>Suivi de chantier & documentation</h3><p>Fiches d'intervention et comptes-rendus générés depuis vos notes vocales ou photos. Conformité sans paperasse.</p><span class="ccard-gain">⏱ −1.5h/semaine</span></div>
+    <div class="ccard"><div class="ccard-icon">💬</div><h3>Réponses aux avis Google</h3><p>Chaque avis reçoit une réponse professionnelle rédigée par l'IA. Votre réputation en ligne s'améliore sans effort.</p><span class="ccard-gain">⏱ −1h/semaine</span></div>
+    <div class="ccard"><div class="ccard-icon">📱</div><h3>Réseaux sociaux automatisés</h3><p>Posts Facebook et Instagram rédigés et programmés depuis vos réalisations et actualités. Présence continue sans y passer du temps.</p><span class="ccard-gain">⏱ −1.5h/semaine</span></div>
+  </div>
+</section>
+<!-- SECTEURS -->
+<section>
+  <div class="fu"><div class="stag">🏢 Secteurs concernés</div><h2>Les métiers qu'on accompagne <span class="grad">à Tarbes</span></h2><p class="ssub">Du plombier à l'industriel — l'automatisation s'adapte à tous les métiers.</p></div>
+  <div class="tags-wrap fu">
+    <span class="tag">✈️ Aéronautique & sous-traitance</span><span class="tag">🏗️ BTP & artisanat</span><span class="tag">🚜 Agriculture & agroalimentaire</span><span class="tag">⚙️ Mécanique & maintenance</span><span class="tag">🏥 Santé & paramédical</span><span class="tag">🏪 Commerce & distribution</span><span class="tag">🍽️ Restauration</span><span class="tag">💈 Services à la personne</span><span class="tag">📐 Bureaux d'études</span>
+  </div>
+</section>
+<!-- TEMOS -->
+<section style="background:var(--bg-peach)">
+  <div class="fu"><div class="stag">💬 Retours clients</div><h2>Ce que disent nos clients <span class="grad">à Tarbes</span></h2><p class="ssub" style="margin-bottom:2rem">Les premiers artisans et PME de Tarbes témoigneront ici.</p>
+  <div class="temo-placeholder"><p>Rejoignez nos premiers clients pilotes.<br>Offre de lancement 100% gratuite.</p><a href="index.html#contact">Réserver mon audit gratuit →</a></div></div>
+</section>
+<!-- CTA -->
+<section class="cta-final">
+  <div class="fu"><h2>On se déplace à Tarbes pour votre audit.</h2><p>Gratuit, sans engagement, 1 heure sur site. On repart avec un plan concret adapté à votre métier.</p><a href="index.html#contact" class="btn-white">Réserver mon audit gratuit →</a></div>
+</section>
+<footer>
+  <div class="flogo">Gain<span class="grad">2</span>Temps</div>
+  <p>© 2026 Gain2Temps · Nay · Pau · Tarbes · Lourdes</p>
+  <div class="flinks"><a href="index.html">Accueil</a><a href="automatisation-ia-pau.html">Pau</a><a href="automatisation-ia-lourdes.html">Lourdes</a><a href="automatisation-ia-nay.html">Nay</a><a href="blog.html">Blog</a></div>
+</footer>
+<script>
+  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');obs.unobserve(x.target)}}),{threshold:.1});
+  document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
