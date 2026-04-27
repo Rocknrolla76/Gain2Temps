@@ -39,7 +39,7 @@
     .filters-sep{width:1px;height:20px;background:var(--border);margin:0 .3rem;flex-shrink:0}
     /* LAYOUT */
     .blog-layout{max-width:1180px;margin:0 auto;padding:3.5rem 5%;display:grid;grid-template-columns:1fr 300px;gap:4rem;align-items:start}
-    @media(max-width:900px){.blog-layout{grid-template-columns:1fr}.sidebar{order:-1}}
+    @media(max-width:900px){.blog-layout{grid-template-columns:1fr}.sidebar{order:2}}
     /* GROUPES */
     .articles-group{margin-bottom:3rem}
     .articles-group:last-child{margin-bottom:0}
@@ -119,7 +119,7 @@
 <div class="blog-hero">
   <div class="blob b1"></div><div class="blob b2"></div>
   <div class="hero-inner">
-    <div class="hero-badge">📝 Ressources</div>
+    <div class="hero-badge">Ressources</div>
     <h1>Nos <span class="grad">prestations</span> et actualités</h1>
     <p>Tout ce qu'on fait, comment ça marche et les nouveautés Gain2Temps — pour les entreprises du Béarn et des Pyrénées.</p>
   </div>
@@ -132,13 +132,13 @@
     </button>
     <div class="filters-sep"></div>
     <button class="filter-btn" onclick="filterCat(this,'prestation')">
-      ⚙️ Prestations <span class="filter-count" id="cnt-prestation">0</span>
+      Prestations <span class="filter-count" id="cnt-prestation">0</span>
     </button>
     <button class="filter-btn" onclick="filterCat(this,'actu')">
-      📣 Actualités <span class="filter-count" id="cnt-actu">0</span>
+      Actualités <span class="filter-count" id="cnt-actu">0</span>
     </button>
     <button class="filter-btn" onclick="filterCat(this,'reflexion')">
-      💡 Réflexions <span class="filter-count" id="cnt-reflexion">0</span>
+      Réflexions <span class="filter-count" id="cnt-reflexion">0</span>
     </button>
   </div>
 </div>
@@ -185,7 +185,7 @@
   <!-- ════ PRESTATIONS ════ -->
   <div class="articles-group" id="group-prestation">
     <div class="section-head">
-      <h2>⚙️ Prestations</h2>
+      <h2>Prestations</h2>
       <span class="count-label" id="lbl-prestation"></span>
     </div>
     <div class="articles-grid">
@@ -246,7 +246,7 @@
   <!-- ════ ACTUALITÉS ════ -->
   <div class="articles-group" id="group-actu">
     <div class="section-head">
-      <h2>📣 Actualités</h2>
+      <h2>Actualités</h2>
       <span class="count-label" id="lbl-actu"></span>
     </div>
     <div class="articles-grid">
@@ -277,22 +277,46 @@
 
       <!-- Placeholders — supprimez au fur et à mesure -->
       <div class="art-placeholder" data-type="actu">
-        <p>📝 À venir<br><em>Premier bilan après 3 mois d'activité</em></p>
+        <p>À venir<br><em>Premier bilan après 3 mois d'activité</em></p>
       </div>
 
       <div class="art-placeholder" data-type="actu">
-        <p>📝 À venir<br><em>On intervient à Lourdes — nos premiers retours</em></p>
+        <p>À venir<br><em>On intervient à Lourdes — nos premiers retours</em></p>
       </div>
 
     </div>
   </div>
+
+  <!-- ════ RÉFLEXIONS ════ -->
+  <div class="articles-group" id="group-reflexion">
+    <div class="section-head">
+      <h2>Réflexions</h2>
+      <span class="count-label" id="lbl-reflexion"></span>
+    </div>
+    <div class="articles-grid">
+
+      <article data-type="reflexion" data-date="2026-04-27">
+        <a href="blog/vibe-coding-nouveau-paradigme.html" class="art-card">
+          <div class="art-thumb thumb-reflexion">🧠</div>
+          <div class="art-card-body">
+            <span class="art-badge badge-reflexion">Réflexion</span>
+            <h3>Le vibe coding : un nouveau paradigme de la création numérique</h3>
+            <p>L'IA ne change pas juste nos outils — elle change notre façon de penser. On passe d'exécutant à architecte. On ne code plus ligne par ligne : on dialogue, on orchestre, on explore.</p>
+            <div class="art-meta"><span>27 avril 2026</span><div class="art-meta-dot"></div><span>2 min</span></div>
+          </div>
+        </a>
+      </article>
+
+    </div>
+  </div>
+  <!-- ════ FIN GROUPE RÉFLEXIONS ════ -->
 
 </main>
 
 <aside class="sidebar">
 
   <div class="sb-block sb-nl">
-    <h3>📬 Newsletter</h3>
+    <h3>Newsletter</h3>
     <p>1 conseil pratique par mois sur l'automatisation IA pour les entreprises des Pyrénées.</p>
     <div class="nl-form" id="nl-form">
       <input type="email" id="nl-email" placeholder="votre@email.fr" autocomplete="email" />
@@ -321,12 +345,12 @@
   </div>
 
   <div class="sb-block">
-    <h3>Nos zones d'intervention</h3>
+    <h3>Zones d'intervention</h3>
     <div class="zones-tags">
-      <a href="automatisation-ia-pau.html" class="zt">🏙️ Pau</a>
-      <a href="automatisation-ia-tarbes.html" class="zt">🏭 Tarbes</a>
-      <a href="automatisation-ia-lourdes.html" class="zt">⛪ Lourdes</a>
-      <a href="automatisation-ia-nay.html" class="zt">📍 Nay</a>
+      <a href="automatisation-ia-pau.html" class="zt">Pau</a>
+      <a href="automatisation-ia-tarbes.html" class="zt">Tarbes</a>
+      <a href="automatisation-ia-lourdes.html" class="zt">Lourdes</a>
+      <a href="automatisation-ia-nay.html" class="zt">Nay</a>
     </div>
   </div>
 
