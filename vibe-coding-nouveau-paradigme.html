@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="../favicon.png" />
+  <title>Le vibe coding : un nouveau paradigme de la création numérique — Gain2Temps</title>
+  <meta name="description" content="L'IA ne change pas juste nos outils, elle change notre façon de penser. Vibe coding, no-code, IA générative : on passe d'exécutant à architecte numérique." />
+  <meta name="keywords" content="vibe coding, intelligence artificielle, IA générative, no-code, création numérique, automatisation, paradigme IA, Gain2Temps, Pau, Nay" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://gain2temps.fr/blog/vibe-coding-nouveau-paradigme" />
+  <meta property="og:title" content="Le vibe coding : un nouveau paradigme de la création numérique" />
+  <meta property="og:description" content="On passe d'exécutant à architecte. On ne code plus ligne par ligne : on dialogue, on orchestre, on explore." />
+  <meta property="og:type" content="article" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{--white:#ffffff;--bg:#f8f9ff;--bg-peach:#fff4ee;--dark:#0f0f1a;--mid:#4a4a6a;--light:#9090b0;--border:#e8e8f0;--gs:#6ec6f5;--gm:#a78bfa;--ge:#f472b6;--ora:#ff8c5a;--ora-bg:#fff0e8}
+    *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+    body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--white);color:var(--dark);overflow-x:hidden}
+    .grad{background:linear-gradient(90deg,var(--gs),var(--gm),var(--ge));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1rem 5%;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+    .nav-logo{font-size:1.25rem;font-weight:800;letter-spacing:-.03em;color:var(--dark);text-decoration:none}
+    .nav-links{display:flex;gap:2rem;align-items:center}
+    .nav-links a{font-size:.875rem;font-weight:500;color:var(--mid);text-decoration:none;transition:color .2s}.nav-links a:hover{color:var(--dark)}
+    .btn-dark{background:var(--dark);color:#fff !important;padding:.6rem 1.4rem;border-radius:100px;font-size:.875rem;font-weight:600;text-decoration:none;transition:opacity .2s,transform .2s;display:inline-flex;align-items:center;gap:.4rem;border:none;cursor:pointer;font-family:inherit}
+    .btn-dark:hover{opacity:.85;transform:translateY(-1px)}
+    .crumb{margin-top:72px;padding:.75rem 5%;background:var(--bg);border-bottom:1px solid var(--border);font-size:.78rem;color:var(--light)}
+    .crumb a{color:var(--mid);text-decoration:none}.crumb a:hover{color:var(--dark)}.crumb span{margin:0 .4rem;opacity:.4}
+
+    /* ARTICLE */
+    .article-wrap{max-width:680px;margin:0 auto;padding:4rem 5% 6rem}
+    .article-header{margin-bottom:3rem}
+    .art-badge{display:inline-flex;align-items:center;gap:.3rem;border-radius:100px;padding:.32rem .85rem;font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:1.2rem;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);color:#15803d}
+    .article-header h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;letter-spacing:-.04em;line-height:1.15;margin-bottom:1rem}
+    .article-meta{display:flex;align-items:center;gap:.8rem;font-size:.8rem;color:var(--light);margin-bottom:1.8rem}
+    .meta-dot{width:3px;height:3px;background:var(--light);border-radius:50%}
+    .article-intro{font-size:1.1rem;color:var(--mid);line-height:1.75;padding:1.5rem;background:var(--bg);border-left:3px solid var(--gm);border-radius:0 12px 12px 0;margin-bottom:2.5rem}
+
+    /* CORPS */
+    .article-body{font-size:.975rem;line-height:1.8;color:var(--dark)}
+    .article-body p{margin-bottom:1.4rem}
+    .article-body h2{font-size:1.25rem;font-weight:800;letter-spacing:-.03em;color:var(--dark);margin:2.5rem 0 .8rem}
+    .article-body h3{font-size:1rem;font-weight:700;color:var(--dark);margin:2rem 0 .6rem}
+    .article-body strong{font-weight:700;color:var(--dark)}
+    .article-body em{font-style:italic;color:var(--mid)}
+
+    /* CITATION MISE EN AVANT */
+    .pullquote{margin:2.5rem 0;padding:1.8rem 2rem;background:linear-gradient(135deg,rgba(110,198,245,.06),rgba(167,139,250,.06));border:1px solid rgba(167,139,250,.2);border-radius:16px;text-align:center}
+    .pullquote p{font-size:1.15rem;font-weight:700;letter-spacing:-.02em;line-height:1.5;color:var(--dark)}
+    .pullquote p span{background:linear-gradient(90deg,var(--gs),var(--gm),var(--ge));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+
+    /* TAGS SEO */
+    .article-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)}
+    .tag{background:var(--bg);border:1px solid var(--border);border-radius:100px;padding:.35rem .85rem;font-size:.75rem;color:var(--mid);text-decoration:none}
+    .tag:hover{border-color:var(--gm);color:var(--dark)}
+
+    /* CTA BAS D'ARTICLE */
+    .article-cta{margin-top:3.5rem;padding:2.5rem;background:var(--dark);border-radius:20px;text-align:center}
+    .article-cta h3{font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:.6rem}
+    .article-cta p{font-size:.875rem;color:rgba(255,255,255,.55);line-height:1.65;margin-bottom:1.5rem;max-width:420px;margin-left:auto;margin-right:auto}
+    .btn-white{background:#fff;color:var(--dark);padding:.8rem 2rem;border-radius:100px;font-size:.875rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;transition:opacity .2s,transform .2s}
+    .btn-white:hover{opacity:.9;transform:translateY(-1px)}
+
+    /* RETOUR BLOG */
+    .back-link{display:inline-flex;align-items:center;gap:.4rem;font-size:.82rem;font-weight:600;color:var(--mid);text-decoration:none;margin-bottom:2.5rem;transition:color .2s}
+    .back-link:hover{color:var(--dark)}
+
+    footer{background:var(--bg);border-top:1px solid var(--border);padding:2rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+    .flogo{font-size:1.1rem;font-weight:800;letter-spacing:-.03em}
+    footer p{font-size:.8rem;color:var(--light)}
+    .flinks{display:flex;gap:1.5rem}
+    .flinks a{font-size:.8rem;color:var(--light);text-decoration:none;transition:color .2s}.flinks a:hover{color:var(--dark)}
+    @media(max-width:768px){nav{padding:1rem 4%}.nav-links{display:none}.article-wrap{padding:3rem 4% 5rem}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-logo">Gain<span class="grad">2</span>Temps</a>
+  <div class="nav-links">
+    <a href="../index.html#services">Services</a>
+    <a href="../index.html#exemples">Exemples</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../index.html#contact" class="btn-dark">Audit gratuit →</a>
+  </div>
+</nav>
+
+<div class="crumb">
+  <a href="../index.html">Accueil</a><span>›</span>
+  <a href="../blog.html">Blog</a><span>›</span>
+  Réflexion — Vibe coding
+</div>
+
+<div class="article-wrap">
+
+  <a href="../blog.html" class="back-link">← Retour au blog</a>
+
+  <header class="article-header">
+    <div class="art-badge">💡 Réflexion</div>
+    <h1>Le vibe coding : un nouveau paradigme de la <span class="grad">création numérique</span></h1>
+    <div class="article-meta">
+      <span>27 avril 2026</span>
+      <div class="meta-dot"></div>
+      <span>2 min de lecture</span>
+      <div class="meta-dot"></div>
+      <span>Gain2Temps · Nay</span>
+    </div>
+    <p class="article-intro">
+      L'IA ne change pas juste nos outils. Elle change notre façon de penser. On passe d'exécutant à architecte, avec une puissance de création qu'on n'avait jamais eue avant.
+    </p>
+  </header>
+
+  <div class="article-body">
+
+    <p>
+      Il y a encore peu, créer une page web propre demandait des heures de code, un développeur, ou un budget. Aujourd'hui, n'importe qui peut se lancer et produire quelque chose de visuellement très professionnel — sans connaître une seule ligne de HTML.
+    </p>
+
+    <p>
+      Ce n'est pas de la magie. C'est le résultat d'un changement de paradigme que certains appellent le <strong>vibe coding</strong> : on ne code plus, on dialogue. On décrit ce qu'on veut, on itère, on affine. L'IA fait le travail technique. Vous faites le travail de pensée.
+    </p>
+
+    <div class="pullquote">
+      <p><span>On ne code plus ligne par ligne.<br>On dialogue. On orchestre. On explore.</span></p>
+    </div>
+
+    <h2>D'exécutant à architecte</h2>
+
+    <p>
+      Le changement est profond. Avant, la barrière d'entrée à la création numérique était technique. Il fallait savoir coder, ou payer quelqu'un qui savait. Résultat : beaucoup d'idées ne voyaient jamais le jour, faute de moyens ou de compétences.
+    </p>
+
+    <p>
+      Avec l'IA générative, cette barrière s'effondre. Ce qui compte désormais, c'est <strong>la clarté de votre intention</strong> : savoir ce que vous voulez créer, pour qui, et pourquoi. L'exécution technique suit. Vous devenez architecte de vos projets numériques, même sans background tech.
+    </p>
+
+    <p>
+      C'est exactement ce qu'on fait chez Gain2Temps. On n'automatise pas à la place des gens — on leur donne les outils et la méthode pour devenir les architectes de leur propre activité.
+    </p>
+
+    <h2>Ce que ça change concrètement pour une TPE</h2>
+
+    <p>
+      Pour un artisan, un commerçant ou un indépendant du Béarn, ça veut dire : une page web créée en quelques heures, des automatisations déployées sans développeur, du contenu produit sans rédacteur. Des choses qui coûtaient des milliers d'euros ou des semaines de travail deviennent accessibles en quelques échanges avec une IA.
+    </p>
+
+    <p>
+      Le vibe coding n'est pas une tendance passagère. C'est un nouveau rapport au numérique — et ceux qui l'adoptent maintenant prendront une longueur d'avance durable sur ceux qui attendent.
+    </p>
+
+  </div>
+
+  <!-- TAGS SEO -->
+  <div class="article-tags">
+    <a href="../blog.html" class="tag">💡 Réflexion</a>
+    <a href="#" class="tag">Vibe coding</a>
+    <a href="#" class="tag">IA générative</a>
+    <a href="#" class="tag">No-code</a>
+    <a href="#" class="tag">Création numérique</a>
+    <a href="#" class="tag">Automatisation IA</a>
+    <a href="#" class="tag">TPE & artisans</a>
+    <a href="#" class="tag">Pau · Nay · Béarn</a>
+  </div>
+
+  <!-- CTA -->
+  <div class="article-cta">
+    <h3>Envie de passer à l'action ?</h3>
+    <p>On vous montre concrètement comment l'IA peut transformer votre activité — en 1 heure, gratuitement, chez vous.</p>
+    <a href="../index.html#contact" class="btn-white">Réserver mon audit gratuit →</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="flogo">Gain<span class="grad">2</span>Temps</div>
+  <p>© 2026 Gain2Temps — Pau, Tarbes, Lourdes & Nay, Béarn</p>
+  <div class="flinks">
+    <a href="../index.html">Accueil</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../index.html#contact">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
