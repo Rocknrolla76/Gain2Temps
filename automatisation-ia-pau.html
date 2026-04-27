@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <title>Automatisation IA à Pau — Gain2Temps</title>
+  <meta name="description" content="Gain2Temps : automatisation IA pour PME, artisans et professions libérales à Pau (64). Gagnez 5 à 15h par semaine. Audit gratuit sur site." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://gain2temps.fr/automatisation-ia-pau" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{--white:#ffffff;--bg:#f8f9ff;--bg-peach:#fff4ee;--dark:#0f0f1a;--mid:#4a4a6a;--light:#9090b0;--border:#e8e8f0;--gs:#6ec6f5;--gm:#a78bfa;--ge:#f472b6;--ora:#ff8c5a;--ora-bg:#fff0e8}
+    *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+    body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--white);color:var(--dark);overflow-x:hidden}
+    .grad{background:linear-gradient(90deg,var(--gs),var(--gm),var(--ge));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1rem 5%;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+    .nav-logo{font-size:1.25rem;font-weight:800;letter-spacing:-.03em;color:var(--dark);text-decoration:none}
+    .nav-links{display:flex;gap:2rem;align-items:center}
+    .nav-links a{font-size:.875rem;font-weight:500;color:var(--mid);text-decoration:none;transition:color .2s}
+    .nav-links a:hover{color:var(--dark)}
+    .btn-dark{background:var(--dark);color:#fff !important;padding:.6rem 1.4rem;border-radius:100px;font-size:.875rem;font-weight:600;text-decoration:none;transition:opacity .2s,transform .2s;display:inline-flex;align-items:center;gap:.4rem;border:none;cursor:pointer;font-family:inherit}
+    .btn-dark:hover{opacity:.85;transform:translateY(-1px)}
+    .crumb{margin-top:72px;padding:.75rem 5%;background:var(--bg);border-bottom:1px solid var(--border);font-size:.78rem;color:var(--light)}
+    .crumb a{color:var(--mid);text-decoration:none}.crumb a:hover{color:var(--dark)}.crumb span{margin:0 .4rem;opacity:.4}
+    .hero{padding:5rem 5% 4rem;background:linear-gradient(180deg,#eef2ff 0%,#faf5ff 60%,#fff 100%);text-align:center;position:relative;overflow:hidden}
+    .blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.35;pointer-events:none}
+    .b1{width:420px;height:420px;background:radial-gradient(circle,#c7d2fe,#a5b4fc);top:-80px;left:-60px}
+    .b2{width:320px;height:320px;background:radial-gradient(circle,#fbcfe8,#f9a8d4);top:20px;right:-40px}
+    .hero-tag{position:relative;z-index:1;display:inline-flex;align-items:center;gap:.4rem;background:#fff;border:1px solid var(--border);border-radius:100px;padding:.4rem 1rem;font-size:.78rem;font-weight:600;color:var(--mid);margin-bottom:1.8rem;box-shadow:0 2px 12px rgba(0,0,0,.05)}
+    .hero h1{position:relative;z-index:1;font-size:clamp(2rem,4.5vw,3.4rem);font-weight:800;line-height:1.1;letter-spacing:-.04em;margin-bottom:1.2rem;max-width:700px;margin-left:auto;margin-right:auto}
+    .hero-sub{position:relative;z-index:1;font-size:1rem;color:var(--mid);line-height:1.7;max-width:500px;margin:0 auto 2.2rem}
+    .hero-actions{position:relative;z-index:1;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+    .btn-outline{background:transparent;color:var(--dark);padding:.6rem 1.4rem;border-radius:100px;font-size:.875rem;font-weight:600;text-decoration:none;border:1.5px solid var(--border);transition:border-color .2s,background .2s;display:inline-flex;align-items:center;gap:.4rem}
+    .btn-outline:hover{border-color:var(--dark);background:var(--bg)}
+    section{padding:5rem 5%}
+    .stag{display:inline-flex;align-items:center;gap:.4rem;background:var(--ora-bg);border:1px solid #ffd0b5;border-radius:100px;padding:.35rem .9rem;font-size:.75rem;font-weight:600;color:var(--ora);margin-bottom:1.2rem}
+    h2{font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:800;letter-spacing:-.04em;line-height:1.15;margin-bottom:.9rem}
+    .ssub{font-size:.95rem;color:var(--mid);line-height:1.7;max-width:520px;margin-bottom:3rem}
+    /* AVANT / APRES */
+    .aa-wrap{background:var(--bg-peach)}
+    .aa-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+    @media(max-width:580px){.aa-grid{grid-template-columns:1fr}}
+    .aa-card{border-radius:18px;padding:2rem}
+    .aa-avant{background:#fff1f1;border:1px solid #ffc5c5}
+    .aa-apres{background:#f0fdf4;border:1px solid #bbf7d0}
+    .aa-head{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.2rem}
+    .aa-avant .aa-head{color:#c0392b}.aa-apres .aa-head{color:#15803d}
+    .aa-list{list-style:none;display:flex;flex-direction:column;gap:.9rem}
+    .aa-list li{font-size:.875rem;display:flex;gap:.7rem;align-items:flex-start;line-height:1.5}
+    .aa-avant .aa-list li::before{content:'✗';color:#c0392b;font-weight:700;flex-shrink:0}
+    .aa-apres .aa-list li::before{content:'✓';color:#15803d;font-weight:700;flex-shrink:0}
+    /* SERVICES */
+    .sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.2rem}
+    .scard{background:var(--bg);border:1px solid var(--border);border-radius:20px;padding:2rem;transition:transform .25s,box-shadow .25s,border-color .25s}
+    .scard:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.07);border-color:#c4b5fd}
+    .snum{font-size:.7rem;font-weight:700;letter-spacing:.1em;color:var(--light);margin-bottom:.8rem;text-transform:uppercase}
+    .scard h3{font-size:1.05rem;font-weight:700;margin-bottom:.6rem;letter-spacing:-.02em}
+    .scard p{font-size:.85rem;color:var(--mid);line-height:1.6}
+    /* TAGS */
+    .tags-bg{background:var(--bg-peach)}
+    .tags-wrap{display:flex;flex-wrap:wrap;gap:.7rem}
+    .tag{background:#fff;border:1px solid #ffd0b5;border-radius:100px;padding:.45rem 1rem;font-size:.82rem;font-weight:500;color:var(--dark)}
+    /* TEMOS */
+    .temos-bg{background:var(--dark)}
+    .temos-bg h2{color:#fff}.temos-bg .ssub{color:rgba(255,255,255,.5)}
+    .temos-bg .stag{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.15);color:#fbb6a0}
+    .temos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+    .temo-placeholder{border:1.5px dashed rgba(255,255,255,.12);border-radius:18px;padding:3rem;text-align:center}
+    .temo-placeholder p{color:rgba(255,255,255,.3);font-size:.85rem;font-style:italic}
+    .temo-placeholder a{display:inline-block;margin-top:1rem;background:linear-gradient(90deg,var(--gs),var(--gm));color:#fff;font-weight:700;padding:.7rem 1.6rem;border-radius:100px;text-decoration:none;font-size:.82rem;-webkit-text-fill-color:#fff}
+    /* CTA */
+    .cta-final{background:linear-gradient(135deg,#6ec6f5 0%,#a78bfa 50%,#f472b6 100%);text-align:center}
+    .cta-final h2{color:#fff;-webkit-text-fill-color:#fff;margin-bottom:.8rem}
+    .cta-final p{color:rgba(255,255,255,.85);font-size:.95rem;max-width:460px;margin:0 auto 2rem}
+    .btn-white{background:#fff;color:var(--dark);padding:.85rem 2.2rem;border-radius:100px;font-size:.95rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:opacity .2s,transform .2s}
+    .btn-white:hover{opacity:.9;transform:translateY(-2px)}
+    footer{background:var(--bg);border-top:1px solid var(--border);padding:2rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+    .flogo{font-size:1.1rem;font-weight:800;letter-spacing:-.03em}
+    footer p{font-size:.8rem;color:var(--light)}
+    .flinks{display:flex;gap:1.5rem}
+    .flinks a{font-size:.8rem;color:var(--light);text-decoration:none;transition:color .2s}
+    .flinks a:hover{color:var(--dark)}
+    .fu{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+    .fu.vis{opacity:1;transform:translateY(0)}
+    @media(max-width:768px){nav{padding:1rem 4%}.nav-links{display:none}section{padding:3.5rem 4%}.hero{padding:4rem 4% 3rem}}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Gain<span class="grad">2</span>Temps</a>
+  <div class="nav-links">
+    <a href="index.html#services">Services</a>
+    <a href="index.html#exemples">Exemples</a>
+    <a href="blog.html">Blog</a>
+    <a href="index.html#contact" class="btn-dark">Audit gratuit →</a>
+  </div>
+</nav>
+<div class="crumb"><a href="index.html">Accueil</a><span>›</span><a href="index.html#zones">Zones</a><span>›</span>Pau</div>
+<header class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <div class="hero-tag">📍 Pau — Pyrénées-Atlantiques (64)</div>
+  <h1>Automatisation <span class="grad">IA</span> pour les entreprises de Pau</h1>
+  <p class="hero-sub">Gagnez 5 à 15 heures par semaine en automatisant vos tâches répétitives. On se déplace directement à Pau et dans les Pyrénées-Atlantiques.</p>
+  <div class="hero-actions">
+    <a href="index.html#contact" class="btn-dark">Demander un audit gratuit →</a>
+    <a href="#services" class="btn-outline">Voir nos services</a>
+  </div>
+</header>
+<section class="aa-wrap">
+  <div class="fu"><div class="stag">🔄 Transformation concrète</div><h2>Avant et après,<br><span class="grad">dans une PME de Pau</span></h2><p class="ssub">Un exemple typique de ce qu'on déploie en 2 à 3 semaines.</p></div>
+  <div class="aa-grid fu">
+    <div class="aa-card aa-avant"><div class="aa-head">Avant</div><ul class="aa-list"><li>3h/semaine à rédiger des devis manuellement</li><li>Relances clients oubliées ou tardives</li><li>Rapport mensuel : 4h de compilation à la main</li><li>Réponses aux avis Google non systématiques</li><li>Prospection LinkedIn : 5h/semaine</li></ul></div>
+    <div class="aa-card aa-apres"><div class="aa-head">Après automatisation</div><ul class="aa-list"><li>Devis générés en 8 minutes depuis un formulaire</li><li>Séquences de relance automatiques et personnalisées</li><li>Rapport auto-généré chaque lundi matin</li><li>Réponses aux avis rédigées par l'IA, validées en 30 sec</li><li>Séquences LinkedIn automatisées, ciblage maintenu</li></ul></div>
+  </div>
+</section>
+<section id="services">
+  <div class="fu"><div class="stag">⚙️ Ce qu'on déploie à Pau</div><h2>Nos services <span class="grad">sur Pau</span></h2><p class="ssub">Des solutions concrètes intégrées dans vos outils existants — sans tout réinventer.</p></div>
+  <div class="sgrid fu">
+    <div class="scard"><div class="snum">01</div><h3>Automatisation de workflows</h3><p>Connexion de vos outils (CRM, emails, agenda, facturation) pour éliminer les ressaisies et tâches manuelles répétitives.</p></div>
+    <div class="scard"><div class="snum">02</div><h3>Agents IA sur mesure</h3><p>Assistants formés sur vos données pour répondre à vos clients, qualifier des leads ou rédiger vos contenus dans votre ton.</p></div>
+    <div class="scard"><div class="snum">03</div><h3>Automatisation marketing</h3><p>Campagnes email, posts réseaux sociaux, réponses aux avis — votre communication tourne même quand vous êtes sur le terrain.</p></div>
+    <div class="scard"><div class="snum">04</div><h3>Audit & stratégie IA</h3><p>1h sur site pour identifier vos priorités d'automatisation et estimer le ROI concret — entièrement gratuit.</p></div>
+  </div>
+</section>
+<section class="tags-bg">
+  <div class="fu"><div class="stag">🏢 Secteurs concernés</div><h2>Qui fait appel à nous <span class="grad">à Pau ?</span></h2><p class="ssub">Structures de toutes tailles, secteurs variés de l'économie paloise.</p></div>
+  <div class="tags-wrap fu">
+    <span class="tag">⚡ Énergie & industrie</span><span class="tag">🏥 Professions de santé</span><span class="tag">🏠 Agences immobilières</span><span class="tag">⚖️ Cabinets juridiques</span><span class="tag">🏗️ BTP & artisanat</span><span class="tag">💼 Consultants & indépendants</span><span class="tag">🛒 Commerce de détail</span><span class="tag">🍽️ Restauration & hôtellerie</span><span class="tag">📚 Organismes de formation</span>
+  </div>
+</section>
+<section class="temos-bg">
+  <div class="fu"><div class="stag">💬 Retours clients</div><h2>Ce que disent nos clients <span class="grad">à Pau</span></h2><p class="ssub">Leurs retours après quelques semaines d'automatisation.</p></div>
+  <div class="temos-grid fu">
+    <div class="temo-placeholder"><p>Vos premiers clients de Pau témoigneront ici.<br>Démarrez avec un audit gratuit.</p><a href="index.html#contact">Être parmi les premiers →</a></div>
+  </div>
+</section>
+<section class="cta-final">
+  <div class="fu"><h2>Prêt à gagner du temps à Pau ?</h2><p>Audit gratuit d'1 heure — on identifie vos 3 premières automatisations prioritaires, sans engagement, sur site.</p><a href="index.html#contact" class="btn-white">Réserver mon audit gratuit →</a></div>
+</section>
+<footer>
+  <div class="flogo">Gain<span class="grad">2</span>Temps</div>
+  <p>© 2026 Gain2Temps · Nay · Pau · Tarbes · Lourdes</p>
+  <div class="flinks"><a href="index.html">Accueil</a><a href="automatisation-ia-tarbes.html">Tarbes</a><a href="automatisation-ia-lourdes.html">Lourdes</a><a href="automatisation-ia-nay.html">Nay</a><a href="blog.html">Blog</a></div>
+</footer>
+<script>
+  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');obs.unobserve(x.target)}}),{threshold:.1});
+  document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
