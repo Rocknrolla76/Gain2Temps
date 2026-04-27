@@ -4,7 +4,7 @@
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <title>Blog IA & Automatisation — Gain2Temps</title>
-  <meta name="description" content="Conseils pratiques, cas d'usage et actualités sur l'automatisation IA pour les TPE et PME de Pau, Tarbes, Lourdes et Nay." />
+  <meta name="description" content="Nos prestations détaillées et actualités — automatisation IA pour les TPE et PME de Pau, Tarbes, Lourdes et Nay." />
   <meta name="robots" content="index, follow" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -13,7 +13,6 @@
     *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
     body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--white);color:var(--dark);overflow-x:hidden}
     .grad{background:linear-gradient(90deg,var(--gs),var(--gm),var(--ge));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-    /* NAV */
     nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1rem 5%;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
     .nav-logo{font-size:1.25rem;font-weight:800;letter-spacing:-.03em;color:var(--dark);text-decoration:none}
     .nav-links{display:flex;gap:2rem;align-items:center}
@@ -21,95 +20,90 @@
     .nav-links a:hover,.nav-links a.active{color:var(--dark)}
     .btn-dark{background:var(--dark);color:#fff !important;padding:.6rem 1.4rem;border-radius:100px;font-size:.875rem;font-weight:600;text-decoration:none;transition:opacity .2s,transform .2s;display:inline-flex;align-items:center;gap:.4rem;border:none;cursor:pointer;font-family:inherit}
     .btn-dark:hover{opacity:.85;transform:translateY(-1px)}
-    /* HERO BLOG */
-    .blog-hero{padding:8rem 5% 4rem;background:linear-gradient(180deg,#eef2ff 0%,#faf5ff 60%,#fff 100%);position:relative;overflow:hidden}
+    .blog-hero{padding:8rem 5% 3.5rem;background:linear-gradient(180deg,#eef2ff 0%,#faf5ff 60%,#fff 100%);position:relative;overflow:hidden}
     .blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.3;pointer-events:none}
     .b1{width:480px;height:480px;background:radial-gradient(circle,#c7d2fe,#a5b4fc);top:-100px;right:-60px}
     .b2{width:320px;height:320px;background:radial-gradient(circle,#fbcfe8,#f9a8d4);bottom:0;left:10%}
-    .hero-inner{position:relative;z-index:1;max-width:780px}
-    .hero-badge{display:inline-flex;align-items:center;gap:.4rem;background:#fff;border:1px solid var(--border);border-radius:100px;padding:.4rem 1rem;font-size:.78rem;font-weight:600;color:var(--mid);margin-bottom:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,.05)}
-    .blog-hero h1{font-size:clamp(2rem,4.5vw,3.4rem);font-weight:800;line-height:1.1;letter-spacing:-.04em;margin-bottom:1rem}
-    .blog-hero p{font-size:.95rem;color:var(--mid);line-height:1.7;max-width:500px}
+    .hero-inner{position:relative;z-index:1;max-width:680px}
+    .hero-badge{display:inline-flex;align-items:center;gap:.4rem;background:#fff;border:1px solid var(--border);border-radius:100px;padding:.4rem 1rem;font-size:.78rem;font-weight:600;color:var(--mid);margin-bottom:1.4rem;box-shadow:0 2px 12px rgba(0,0,0,.05)}
+    .blog-hero h1{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;line-height:1.1;letter-spacing:-.04em;margin-bottom:.9rem}
+    .blog-hero p{font-size:.95rem;color:var(--mid);line-height:1.7;max-width:480px}
     /* FILTRES */
-    .filters{background:var(--bg);border-bottom:1px solid var(--border);padding:.75rem 5%;display:flex;gap:.5rem;overflow-x:auto;-webkit-overflow-scrolling:touch}
-    .filter-btn{flex-shrink:0;background:transparent;border:1.5px solid transparent;border-radius:100px;padding:.45rem 1rem;font-family:'Plus Jakarta Sans',sans-serif;font-size:.8rem;font-weight:600;color:var(--mid);cursor:pointer;transition:all .18s;white-space:nowrap}
+    .filters-bar{background:var(--white);border-bottom:1px solid var(--border);padding:0 5%;position:sticky;top:72px;z-index:50}
+    .filters-inner{display:flex;gap:.5rem;padding:.9rem 0;align-items:center}
+    .filter-btn{background:transparent;border:1.5px solid transparent;border-radius:100px;padding:.5rem 1.2rem;font-family:'Plus Jakarta Sans',sans-serif;font-size:.82rem;font-weight:600;color:var(--mid);cursor:pointer;transition:all .18s;white-space:nowrap;display:inline-flex;align-items:center;gap:.4rem}
     .filter-btn:hover{color:var(--dark);border-color:var(--border)}
     .filter-btn.active{background:var(--dark);color:#fff;border-color:var(--dark)}
+    .filter-count{display:inline-flex;align-items:center;justify-content:center;min-width:18px;height:18px;padding:0 5px;background:rgba(0,0,0,.08);border-radius:99px;font-size:.64rem;font-weight:700}
+    .filter-btn.active .filter-count{background:rgba(255,255,255,.2)}
+    .filters-sep{width:1px;height:20px;background:var(--border);margin:0 .3rem;flex-shrink:0}
     /* LAYOUT */
-    .blog-layout{max-width:1180px;margin:0 auto;padding:3.5rem 5%;display:grid;grid-template-columns:1fr 300px;gap:4rem}
+    .blog-layout{max-width:1180px;margin:0 auto;padding:3.5rem 5%;display:grid;grid-template-columns:1fr 300px;gap:4rem;align-items:start}
     @media(max-width:900px){.blog-layout{grid-template-columns:1fr}.sidebar{order:-1}}
-    /* FEATURED */
-    .featured{display:block;text-decoration:none;background:var(--bg);border:1px solid var(--border);border-radius:20px;overflow:hidden;margin-bottom:2rem;transition:box-shadow .2s,transform .2s}
-    .featured:hover{box-shadow:0 20px 50px rgba(0,0,0,.08);transform:translateY(-2px)}
-    .featured-thumb{height:200px;background:linear-gradient(135deg,var(--dark),#1a3a6b);display:flex;align-items:center;justify-content:center;font-size:4rem}
-    .featured-body{padding:2rem}
-    .art-cat{display:inline-block;background:var(--ora-bg);border:1px solid #ffd0b5;border-radius:100px;padding:.3rem .8rem;font-size:.72rem;font-weight:600;color:var(--ora);margin-bottom:.9rem}
-    .featured-body h2{font-size:1.35rem;font-weight:800;letter-spacing:-.03em;color:var(--dark);line-height:1.25;margin-bottom:.7rem}
-    .featured-body p{font-size:.875rem;color:var(--mid);line-height:1.65;margin-bottom:1rem}
-    .art-meta{display:flex;align-items:center;gap:.8rem;font-size:.78rem;color:var(--light)}
-    .art-meta-dot{width:3px;height:3px;background:var(--light);border-radius:50%}
-    .read-more{background:linear-gradient(90deg,var(--gs),var(--gm));-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700}
+    /* GROUPES */
+    .articles-group{margin-bottom:3rem}
+    .articles-group:last-child{margin-bottom:0}
+    .section-head{display:flex;align-items:baseline;gap:.8rem;margin-bottom:1.4rem;padding-bottom:.75rem;border-bottom:1.5px solid var(--border)}
+    .section-head h2{font-size:1.05rem;font-weight:800;letter-spacing:-.02em}
+    .section-head .count-label{font-size:.75rem;color:var(--light)}
     /* GRILLE */
     .articles-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
-    @media(max-width:520px){.articles-grid{grid-template-columns:1fr}}
-    .art-card{display:block;text-decoration:none;border:1px solid var(--border);border-radius:18px;overflow:hidden;transition:border-color .2s,box-shadow .2s}
-    .art-card:hover{border-color:#c4b5fd;box-shadow:0 8px 24px rgba(167,139,250,.1)}
-    .art-thumb{height:100px;display:flex;align-items:center;justify-content:center;font-size:2.2rem}
-    .t1{background:linear-gradient(135deg,#e8f4ff,#cce0ff)}
-    .t2{background:linear-gradient(135deg,#e8faf8,#c8f5f0)}
-    .t3{background:linear-gradient(135deg,#fff8e8,#ffedc0)}
-    .t4{background:linear-gradient(135deg,#f0e8ff,#dcc8ff)}
-    .t5{background:linear-gradient(135deg,#ffe8e8,#ffc8c8)}
-    .t6{background:linear-gradient(135deg,#e8ffe8,#c8f5c8)}
+    @media(max-width:560px){.articles-grid{grid-template-columns:1fr}}
+    /* CARTE */
+    .art-card{display:block;text-decoration:none;border:1px solid var(--border);border-radius:18px;overflow:hidden;background:var(--white);transition:border-color .2s,box-shadow .2s,transform .2s}
+    .art-card:hover{border-color:#c4b5fd;box-shadow:0 8px 28px rgba(167,139,250,.12);transform:translateY(-2px)}
+    .art-thumb{height:110px;display:flex;align-items:center;justify-content:center;font-size:2.2rem}
+    .thumb-prestation{background:linear-gradient(135deg,#eef2ff,#dde4ff)}
+    .thumb-actu{background:linear-gradient(135deg,#fff4ee,#ffe0cc)}
     .art-card-body{padding:1.4rem}
-    .art-card-body h3{font-size:.9rem;font-weight:700;letter-spacing:-.02em;color:var(--dark);line-height:1.35;margin-bottom:.5rem}
-    .art-card-body p{font-size:.8rem;color:var(--mid);line-height:1.55;margin-bottom:.8rem}
-    .art-card-meta{font-size:.73rem;color:var(--light)}
+    .art-badge{display:inline-flex;align-items:center;gap:.3rem;border-radius:100px;padding:.28rem .75rem;font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:.65rem}
+    .badge-prestation{background:rgba(110,198,245,.1);border:1px solid rgba(110,198,245,.3);color:#2a7aba}
+    .badge-actu{background:var(--ora-bg);border:1px solid #ffd0b5;color:var(--ora)}
+    .art-card-body h3{font-size:.88rem;font-weight:700;letter-spacing:-.02em;color:var(--dark);line-height:1.35;margin-bottom:.45rem}
+    .art-card-body p{font-size:.78rem;color:var(--mid);line-height:1.55;margin-bottom:.8rem}
+    .art-meta{display:flex;align-items:center;gap:.55rem;font-size:.72rem;color:var(--light)}
+    .art-meta-dot{width:3px;height:3px;background:var(--light);border-radius:50%;flex-shrink:0}
+    /* FEATURED — 1ère carte de chaque groupe */
+    .art-card.featured{grid-column:1/-1;display:grid;grid-template-columns:200px 1fr}
+    @media(max-width:560px){.art-card.featured{grid-template-columns:1fr;display:block}}
+    .art-card.featured .art-thumb{height:100%;min-height:140px}
+    .art-card.featured .art-card-body h3{font-size:1rem}
+    .art-card.featured .art-card-body p{font-size:.85rem}
     /* PLACEHOLDER */
-    .art-placeholder{border:1.5px dashed var(--border);border-radius:18px;padding:2rem;text-align:center}
-    .art-placeholder p{font-size:.8rem;color:var(--light);font-style:italic;line-height:1.5}
+    .art-placeholder{border:1.5px dashed var(--border);border-radius:18px;padding:1.8rem;text-align:center;background:var(--bg)}
+    .art-placeholder p{font-size:.76rem;color:var(--light);font-style:italic;line-height:1.6}
     /* SIDEBAR */
-    .sidebar{display:flex;flex-direction:column;gap:1.5rem}
+    .sidebar{display:flex;flex-direction:column;gap:1.5rem;position:sticky;top:130px}
     .sb-block{background:var(--bg);border:1px solid var(--border);border-radius:18px;padding:1.6rem}
-    .sb-block h3{font-size:.95rem;font-weight:700;letter-spacing:-.02em;margin-bottom:1.2rem}
-    /* Newsletter sidebar */
+    .sb-block h3{font-size:.9rem;font-weight:700;letter-spacing:-.02em;margin-bottom:1.1rem}
     .sb-nl{background:var(--dark)}
     .sb-nl h3{color:#fff}
-    .sb-nl p{font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.6;margin-bottom:1rem}
-    .nl-form{display:flex;flex-direction:column;gap:.7rem}
-    .nl-form input{background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.15);border-radius:8px;padding:.65rem .9rem;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:.82rem;outline:none;transition:border-color .2s}
+    .sb-nl p{font-size:.8rem;color:rgba(255,255,255,.5);line-height:1.6;margin-bottom:1rem}
+    .nl-form{display:flex;flex-direction:column;gap:.6rem}
+    .nl-form input{background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.15);border-radius:8px;padding:.6rem .85rem;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:.8rem;outline:none;transition:border-color .2s}
     .nl-form input::placeholder{color:rgba(255,255,255,.3)}
     .nl-form input:focus{border-color:var(--gm)}
-    .nl-form button{background:linear-gradient(90deg,var(--gs),var(--gm));border:none;border-radius:100px;padding:.65rem;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.82rem;cursor:pointer;transition:opacity .2s;-webkit-text-fill-color:#fff}
+    .nl-form button{background:linear-gradient(90deg,var(--gs),var(--gm));border:none;border-radius:100px;padding:.62rem;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.8rem;cursor:pointer;-webkit-text-fill-color:#fff;transition:opacity .2s}
     .nl-form button:hover{opacity:.9}
-    /* CTA sidebar */
     .sb-cta{background:linear-gradient(135deg,var(--gs),var(--gm),var(--ge))}
     .sb-cta h3{color:#fff;-webkit-text-fill-color:#fff}
-    .sb-cta p{font-size:.82rem;color:rgba(255,255,255,.8);margin-bottom:1rem}
-    .sb-cta a{display:block;background:#fff;color:var(--dark);font-weight:700;padding:.7rem;border-radius:100px;text-decoration:none;font-size:.82rem;text-align:center;transition:transform .2s}
+    .sb-cta p{font-size:.8rem;color:rgba(255,255,255,.8);margin-bottom:1rem}
+    .sb-cta a{display:block;background:#fff;color:var(--dark);font-weight:700;padding:.65rem;border-radius:100px;text-decoration:none;font-size:.8rem;text-align:center;transition:transform .2s}
     .sb-cta a:hover{transform:translateY(-1px)}
-    /* Tags */
-    .tags-cloud{display:flex;flex-wrap:wrap;gap:.5rem}
-    .tag{background:#fff;border:1px solid var(--border);border-radius:100px;padding:.35rem .8rem;font-size:.75rem;color:var(--mid);text-decoration:none;transition:border-color .2s}
-    .tag:hover{border-color:var(--gm)}
-    /* Popular */
-    .pop-list{display:flex;flex-direction:column;gap:1rem}
-    .pop-item{display:flex;gap:.8rem;align-items:flex-start;text-decoration:none}
-    .pop-n{flex-shrink:0;width:22px;height:22px;background:var(--ora-bg);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;color:var(--ora)}
-    .pop-item h4{font-size:.82rem;font-weight:600;color:var(--dark);line-height:1.35}
+    .pop-list{display:flex;flex-direction:column;gap:.9rem}
+    .pop-item{display:flex;gap:.7rem;align-items:flex-start;text-decoration:none}
+    .pop-n{flex-shrink:0;width:20px;height:20px;background:var(--ora-bg);border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:800;color:var(--ora)}
+    .pop-item h4{font-size:.79rem;font-weight:600;color:var(--dark);line-height:1.35}
     .pop-item:hover h4{color:var(--gm)}
-    /* Zones sidebar */
     .zones-tags{display:flex;flex-wrap:wrap;gap:.5rem}
-    .zone-tag-link{background:#fff;border:1px solid var(--border);border-radius:100px;padding:.35rem .8rem;font-size:.75rem;color:var(--mid);text-decoration:none;transition:border-color .2s,color .2s}
-    .zone-tag-link:hover{border-color:var(--gm);color:var(--dark)}
-    /* FOOTER */
+    .zt{background:#fff;border:1px solid var(--border);border-radius:100px;padding:.32rem .75rem;font-size:.73rem;color:var(--mid);text-decoration:none;transition:border-color .2s,color .2s}
+    .zt:hover{border-color:var(--gm);color:var(--dark)}
     footer{background:var(--bg);border-top:1px solid var(--border);padding:2rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
     .flogo{font-size:1.1rem;font-weight:800;letter-spacing:-.03em}
     footer p{font-size:.8rem;color:var(--light)}
     .flinks{display:flex;gap:1.5rem}
     .flinks a{font-size:.8rem;color:var(--light);text-decoration:none;transition:color .2s}.flinks a:hover{color:var(--dark)}
-    .fu{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}.fu.vis{opacity:1;transform:translateY(0)}
-    @media(max-width:768px){nav{padding:1rem 4%}.nav-links{display:none}.blog-hero{padding:6rem 4% 3rem}.blog-layout{padding:2.5rem 4%}}
+    @media(max-width:768px){nav{padding:1rem 4%}.nav-links{display:none}.blog-hero{padding:6rem 4% 3rem}.blog-layout{padding:2.5rem 4%}.filters-bar{padding:0 4%}}
   </style>
 </head>
 <body>
@@ -124,165 +118,218 @@
   </div>
 </nav>
 
-<!-- HERO -->
 <div class="blog-hero">
   <div class="blob b1"></div><div class="blob b2"></div>
   <div class="hero-inner">
-    <div class="hero-badge">📝 Ressources & Conseils</div>
-    <h1>L'<span class="grad">IA pratique</span> pour les entreprises des Pyrénées</h1>
-    <p>Cas d'usage concrets, tutoriels et retours d'expérience — pour les TPE et PME de Pau, Tarbes, Lourdes et Nay.</p>
+    <div class="hero-badge">📝 Ressources</div>
+    <h1>Nos <span class="grad">prestations</span> et actualités</h1>
+    <p>Tout ce qu'on fait, comment ça marche et les nouveautés Gain2Temps — pour les entreprises du Béarn et des Pyrénées.</p>
   </div>
 </div>
 
-<!-- FILTRES -->
-<div class="filters">
-  <button class="filter-btn active" onclick="filterCat(this,'all')">Tous</button>
-  <button class="filter-btn" onclick="filterCat(this,'automatisation')">⚙️ Automatisation</button>
-  <button class="filter-btn" onclick="filterCat(this,'cas-usage')">💡 Cas d'usage</button>
-  <button class="filter-btn" onclick="filterCat(this,'hotellerie')">🏨 Hôtellerie & Tourisme</button>
-  <button class="filter-btn" onclick="filterCat(this,'artisanat')">🔩 Artisanat & BTP</button>
-  <button class="filter-btn" onclick="filterCat(this,'outils')">🛠️ Outils IA</button>
-  <button class="filter-btn" onclick="filterCat(this,'local')">📍 Local</button>
+<div class="filters-bar">
+  <div class="filters-inner">
+    <button class="filter-btn active" onclick="filterCat(this,'all')">
+      Tout voir <span class="filter-count" id="cnt-all">0</span>
+    </button>
+    <div class="filters-sep"></div>
+    <button class="filter-btn" onclick="filterCat(this,'prestation')">
+      ⚙️ Prestations <span class="filter-count" id="cnt-prestation">0</span>
+    </button>
+    <button class="filter-btn" onclick="filterCat(this,'actu')">
+      📣 Actualités <span class="filter-count" id="cnt-actu">0</span>
+    </button>
+  </div>
 </div>
 
-<!-- LAYOUT -->
 <div class="blog-layout">
-  <main>
+<main id="blog-main">
 
-    <!-- ARTICLE FEATURED -->
-    <!--
-      INSTRUCTIONS : remplacez href, data-category et le contenu
-      quand vous publiez votre premier vrai article.
-    -->
-    <a href="blog/automatisation-devis-artisans-tarbes.html" class="featured fu" data-category="automatisation artisanat">
-      <div class="featured-thumb">⚙️</div>
-      <div class="featured-body">
-        <span class="art-cat">Automatisation</span>
-        <h2>Comment un artisan de Tarbes a automatisé ses devis et gagné 3h par semaine</h2>
-        <p>Passer de la saisie manuelle à un système automatique : retour concret sur une mission dans le secteur du BTP à Tarbes. Outils utilisés, temps de déploiement, ROI mesuré.</p>
+<!-- ═══════════════════════════════════════════════════════
+  GUIDE : AJOUTER UN ARTICLE
+  ─────────────────────────────────────────────────────────
+  1. Copiez le bloc <article> d'exemple ci-dessous
+  2. Collez-le dans le bon groupe (prestation ou actu)
+  3. Renseignez :
+       data-type  : "prestation" ou "actu"
+       data-date  : "YYYY-MM-DD"   ← utilisé pour le tri
+       href       : "blog/nom-de-fichier.html"
+       art-thumb  : classe "thumb-prestation" ou "thumb-actu" + emoji
+       art-badge  : classe "badge-prestation" ou "badge-actu" + texte
+       h3         : titre
+       p          : extrait (2-3 lignes)
+       art-meta   : date lisible + durée de lecture
+  4. Le 1er article de chaque groupe reçoit la classe "featured"
+     (carte large) — les suivants sont normaux.
+  5. Supprimez le placeholder correspondant si besoin.
+  6. Les compteurs et la sidebar "Récents" se mettent à jour seuls.
+
+  MODÈLE À COPIER :
+  ─────────────────
+  <article data-type="prestation" data-date="2025-06-01">
+    <a href="blog/mon-article.html" class="art-card">
+      <div class="art-thumb thumb-prestation">🔧</div>
+      <div class="art-card-body">
+        <span class="art-badge badge-prestation">Prestation</span>
+        <h3>Mon titre d'article</h3>
+        <p>Un court extrait de 2 à 3 lignes qui donne envie de lire la suite.</p>
         <div class="art-meta">
-          <span>15 avril 2025</span><div class="art-meta-dot"></div>
-          <span>5 min</span><div class="art-meta-dot"></div>
-          <span class="read-more">Lire l'article →</span>
+          <span>1 juin 2025</span><div class="art-meta-dot"></div><span>4 min</span>
         </div>
       </div>
     </a>
+  </article>
+═══════════════════════════════════════════════════════ -->
 
-    <!-- GRILLE ARTICLES -->
-    <div class="articles-grid" id="articles-grid">
+  <!-- ════ PRESTATIONS ════ -->
+  <div class="articles-group" id="group-prestation">
+    <div class="section-head">
+      <h2>⚙️ Prestations</h2>
+      <span class="count-label" id="lbl-prestation"></span>
+    </div>
+    <div class="articles-grid">
 
-      <a href="blog/reponses-avis-google-ia-lourdes.html" class="art-card" data-category="hotellerie automatisation">
-        <div class="art-thumb t2">⭐</div>
-        <div class="art-card-body">
-          <span class="art-cat">Hôtellerie & Tourisme</span>
-          <h3>Répondre à 50 avis Google par semaine sans y passer une heure</h3>
-          <p>L'IA génère des réponses personnalisées à vos avis en secondes. Guide pratique pour un hôtel de Lourdes.</p>
-          <div class="art-card-meta">8 avril 2025 · 4 min</div>
-        </div>
-      </a>
+      <article data-type="prestation" data-date="2026-04-27">
+        <a href="blog/page-web-auteur-nay.html" class="art-card featured">
+          <div class="art-thumb thumb-prestation">📖</div>
+          <div class="art-card-body">
+            <span class="art-badge badge-prestation">Prestation</span>
+            <h3>Première réalisation client à Nay : une page web sur mesure pour accompagner un livre</h3>
+            <p>Un auteur local vient de publier son dernier livre. On a créé une page web sur mesure qui accompagne ses explications et donne des informations complémentaires à ses lecteurs — une belle première mission à domicile.</p>
+            <div class="art-meta"><span>27 avril 2026</span><div class="art-meta-dot"></div><span>2 min</span></div>
+          </div>
+        </a>
+      </article>
 
-      <a href="blog/make-zapier-debutant.html" class="art-card" data-category="outils automatisation">
-        <div class="art-thumb t1">🔗</div>
-        <div class="art-card-body">
-          <span class="art-cat">Outils IA</span>
-          <h3>Make ou Zapier : lequel choisir pour automatiser votre TPE ?</h3>
-          <p>Comparatif pratique pour les non-techniciens. Prix, facilité d'utilisation, intégrations courantes.</p>
-          <div class="art-card-meta">1 avril 2025 · 6 min</div>
-        </div>
-      </a>
+      <article data-type="prestation" data-date="2025-04-15">
+        <a href="blog/documents-automatiques-devis.html" class="art-card">
+          <div class="art-thumb thumb-prestation">📋</div>
+          <div class="art-card-body">
+            <span class="art-badge badge-prestation">Prestation</span>
+            <h3>Documents automatiques : comment on génère vos devis en 3 minutes</h3>
+            <p>De la prise de commande à l'envoi du devis finalisé — comment notre service fonctionne concrètement, sans aucune saisie manuelle.</p>
+            <div class="art-meta"><span>15 avril 2025</span><div class="art-meta-dot"></div><span>5 min</span></div>
+          </div>
+        </a>
+      </article>
 
-      <a href="blog/audit-ia-gratuit-pau.html" class="art-card" data-category="cas-usage local">
-        <div class="art-thumb t3">🔍</div>
-        <div class="art-card-body">
-          <span class="art-cat">Cas d'usage</span>
-          <h3>Ce qu'on découvre en 1h d'audit IA dans une PME de Pau</h3>
-          <p>Les 5 tâches automatisables les plus fréquentes dans les entreprises de Pau — et le temps gagné.</p>
-          <div class="art-card-meta">25 mars 2025 · 5 min</div>
-        </div>
-      </a>
+      <article data-type="prestation" data-date="2025-04-01">
+        <a href="blog/automatisation-flux.html" class="art-card">
+          <div class="art-thumb thumb-prestation">🔗</div>
+          <div class="art-card-body">
+            <span class="art-badge badge-prestation">Prestation</span>
+            <h3>Automatisation de flux : ce qu'on connecte et comment ça tourne</h3>
+            <p>Agenda, CRM, email, facturation — comment on relie vos outils pour que tout se synchronise sans vous.</p>
+            <div class="art-meta"><span>1 avril 2025</span><div class="art-meta-dot"></div><span>4 min</span></div>
+          </div>
+        </a>
+      </article>
 
-      <!--
-        AJOUTEZ VOS PROCHAINS ARTICLES ICI.
-        Copiez un bloc .art-card, changez href, data-category,
-        la classe .art-thumb (t1 à t6), l'emoji, le contenu.
-        Supprimez le placeholder correspondant quand l'article est prêt.
-      -->
+      <article data-type="prestation" data-date="2025-03-20">
+        <a href="blog/creation-contenu-ia.html" class="art-card">
+          <div class="art-thumb thumb-prestation">✍️</div>
+          <div class="art-card-body">
+            <span class="art-badge badge-prestation">Prestation</span>
+            <h3>Création de contenu IA : 1 mois de posts en 20 minutes</h3>
+            <p>Comment on produit un mois de contenu réseaux sociaux dans votre ton et votre métier, en une seule session.</p>
+            <div class="art-meta"><span>20 mars 2025</span><div class="art-meta-dot"></div><span>3 min</span></div>
+          </div>
+        </a>
+      </article>
 
-      <div class="art-placeholder" data-category="local">
-        <p>📝 À venir<br><em>L'IA pour les professions de santé à Nay et en Plaine de Nay</em></p>
+      <!-- Placeholder — ajoutez votre 5e article prestation ici -->
+
+    </div>
+  </div>
+
+  <!-- ════ ACTUALITÉS ════ -->
+  <div class="articles-group" id="group-actu">
+    <div class="section-head">
+      <h2>📣 Actualités</h2>
+      <span class="count-label" id="lbl-actu"></span>
+    </div>
+    <div class="articles-grid">
+
+      <article data-type="actu" data-date="2025-04-08">
+        <a href="blog/lancement-gain2temps.html" class="art-card featured">
+          <div class="art-thumb thumb-actu">🚀</div>
+          <div class="art-card-body">
+            <span class="art-badge badge-actu">Actualité</span>
+            <h3>Gain2Temps est lancé : offre 100% gratuite pour les premiers clients du Béarn</h3>
+            <p>On ouvre nos portes aux artisans, commerçants et indépendants de Pau, Nay, Tarbes et Lourdes. Découvrez notre offre de lancement et comment en profiter dès maintenant.</p>
+            <div class="art-meta"><span>8 avril 2025</span><div class="art-meta-dot"></div><span>3 min</span></div>
+          </div>
+        </a>
+      </article>
+
+      <article data-type="actu" data-date="2025-03-25">
+        <a href="blog/pourquoi-ia-locale-pyrénées.html" class="art-card">
+          <div class="art-thumb thumb-actu">📍</div>
+          <div class="art-card-body">
+            <span class="art-badge badge-actu">Actualité</span>
+            <h3>Pourquoi on a choisi de lancer un service IA local dans les Pyrénées</h3>
+            <p>Le constat qui nous a poussés à créer Gain2Temps — et pourquoi les Pyrénées ont besoin d'un expert IA de proximité.</p>
+            <div class="art-meta"><span>25 mars 2025</span><div class="art-meta-dot"></div><span>4 min</span></div>
+          </div>
+        </a>
+      </article>
+
+      <!-- Placeholders — supprimez au fur et à mesure -->
+      <div class="art-placeholder" data-type="actu">
+        <p>📝 À venir<br><em>Premier bilan après 3 mois d'activité</em></p>
       </div>
 
-      <div class="art-placeholder" data-category="hotellerie">
-        <p>📝 À venir<br><em>Communication multilingue automatisée : guide pour les hôtels de Lourdes</em></p>
-      </div>
-
-      <div class="art-placeholder" data-category="artisanat">
-        <p>📝 À venir<br><em>IA et artisanat du bâtiment : ce qui est possible dès aujourd'hui</em></p>
+      <div class="art-placeholder" data-type="actu">
+        <p>📝 À venir<br><em>On intervient à Lourdes — nos premiers retours</em></p>
       </div>
 
     </div>
+  </div>
 
-  </main>
+</main>
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
+<aside class="sidebar">
 
-    <!-- Newsletter -->
-    <div class="sb-block sb-nl">
-      <h3>📬 Newsletter</h3>
-      <p>1 conseil pratique par mois sur l'automatisation IA, adapté aux entreprises des Pyrénées.</p>
-      <div class="nl-form">
-        <input type="email" placeholder="votre@email.fr" />
-        <button type="button">S'inscrire gratuitement</button>
-      </div>
+  <div class="sb-block sb-nl">
+    <h3>📬 Newsletter</h3>
+    <p>1 conseil pratique par mois sur l'automatisation IA pour les entreprises des Pyrénées.</p>
+    <div class="nl-form" id="nl-form">
+      <input type="email" id="nl-email" placeholder="votre@email.fr" autocomplete="email" />
+      <button type="button" id="nl-btn" onclick="nlSubmit()">S'inscrire gratuitement</button>
     </div>
-
-    <!-- CTA Audit -->
-    <div class="sb-block sb-cta">
-      <h3>Audit gratuit</h3>
-      <p>1h pour identifier vos 3 meilleures automatisations. On se déplace à Pau, Tarbes, Lourdes ou Nay.</p>
-      <a href="index.html#contact">Réserver mon audit →</a>
+    <!-- État succès -->
+    <div id="nl-success" style="display:none;text-align:center;padding:.8rem 0">
+      <div style="font-size:1.4rem;margin-bottom:.4rem">✅</div>
+      <p style="font-size:.8rem;color:rgba(255,255,255,.7);line-height:1.5">Inscription enregistrée !<br>À très bientôt.</p>
     </div>
-
-    <!-- Articles populaires -->
-    <div class="sb-block">
-      <h3>Articles populaires</h3>
-      <div class="pop-list">
-        <a href="blog/automatisation-devis-artisans-tarbes.html" class="pop-item"><div class="pop-n">1</div><h4>Automatiser ses devis — retour d'expérience à Tarbes</h4></a>
-        <a href="blog/reponses-avis-google-ia-lourdes.html" class="pop-item"><div class="pop-n">2</div><h4>Répondre à 50 avis Google sans y passer 1h</h4></a>
-        <a href="blog/make-zapier-debutant.html" class="pop-item"><div class="pop-n">3</div><h4>Make vs Zapier : lequel choisir ?</h4></a>
-        <a href="blog/audit-ia-gratuit-pau.html" class="pop-item"><div class="pop-n">4</div><h4>Ce qu'on découvre en 1h d'audit IA</h4></a>
-      </div>
+    <!-- État erreur -->
+    <div id="nl-error" style="display:none;margin-top:.6rem">
+      <p style="font-size:.75rem;color:#f87171;line-height:1.4">Une erreur est survenue. Merci de réessayer.</p>
     </div>
+  </div>
 
-    <!-- Tags -->
-    <div class="sb-block">
-      <h3>Thèmes</h3>
-      <div class="tags-cloud">
-        <a href="#" class="tag">⚙️ Automatisation</a>
-        <a href="#" class="tag">🤖 ChatGPT</a>
-        <a href="#" class="tag">📧 Email</a>
-        <a href="#" class="tag">🏨 Hôtellerie</a>
-        <a href="#" class="tag">🔩 Artisanat</a>
-        <a href="#" class="tag">🔗 Make</a>
-        <a href="#" class="tag">⚡ Zapier</a>
-        <a href="#" class="tag">💰 ROI</a>
-        <a href="#" class="tag">🎓 Formation</a>
-      </div>
+  <div class="sb-block sb-cta">
+    <h3>Audit gratuit</h3>
+    <p>1h pour identifier vos 3 meilleures automatisations. On se déplace où vous êtes.</p>
+    <a href="index.html#contact">Réserver mon audit →</a>
+  </div>
+
+  <div class="sb-block">
+    <h3>Articles récents</h3>
+    <div class="pop-list" id="pop-list"><!-- rempli par JS --></div>
+  </div>
+
+  <div class="sb-block">
+    <h3>Nos zones d'intervention</h3>
+    <div class="zones-tags">
+      <a href="automatisation-ia-pau.html" class="zt">🏙️ Pau</a>
+      <a href="automatisation-ia-tarbes.html" class="zt">🏭 Tarbes</a>
+      <a href="automatisation-ia-lourdes.html" class="zt">⛪ Lourdes</a>
+      <a href="automatisation-ia-nay.html" class="zt">📍 Nay</a>
     </div>
+  </div>
 
-    <!-- Zones -->
-    <div class="sb-block">
-      <h3>Nous intervenons à</h3>
-      <div class="zones-tags">
-        <a href="automatisation-ia-pau.html" class="zone-tag-link">🏙️ Pau</a>
-        <a href="automatisation-ia-tarbes.html" class="zone-tag-link">🏭 Tarbes</a>
-        <a href="automatisation-ia-lourdes.html" class="zone-tag-link">⛪ Lourdes</a>
-        <a href="automatisation-ia-nay.html" class="zone-tag-link">📍 Nay</a>
-      </div>
-    </div>
-
-  </aside>
+</aside>
 </div>
 
 <footer>
@@ -297,24 +344,92 @@
 </footer>
 
 <script>
-  // Scroll animations
-  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');obs.unobserve(x.target)}}),{threshold:.1});
-  document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
+// ── Newsletter → Google Sheets ─────────────────────────
+// ⚠️  REMPLACE L'URL CI-DESSOUS par l'URL de ton déploiement Apps Script
+//     (Extensions → Apps Script → Déployer → Nouveau déploiement → App Web)
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwnh4zsxuGe1V80-e9Pcnzi7dcGjaZrtIWA3--1d7AnYhNw9X16x1QUS0Zawciu7Q5hSA/exec';
 
-  // Filtre catégories
-  function filterCat(btn, cat) {
-    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    const featured = document.querySelector('.featured');
-    const cards = document.querySelectorAll('#articles-grid > *');
-    if(cat==='all') {
-      if(featured) featured.style.display='';
-      cards.forEach(c=>c.style.display='');
-    } else {
-      if(featured) featured.style.display=(featured.dataset.category||'').includes(cat)?'':'none';
-      cards.forEach(c=>c.style.display=(c.dataset.category||'').includes(cat)?'':'none');
-    }
+async function nlSubmit() {
+  const emailInput = document.getElementById('nl-email');
+  const btn        = document.getElementById('nl-btn');
+  const errDiv     = document.getElementById('nl-error');
+  const email      = emailInput.value.trim();
+
+  // Validation basique
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    emailInput.style.borderColor = '#f87171';
+    emailInput.focus();
+    return;
   }
+  emailInput.style.borderColor = '';
+  errDiv.style.display = 'none';
+
+  // État chargement
+  btn.disabled = true;
+  btn.textContent = 'Envoi…';
+
+  try {
+    // no-cors : Google Apps Script n'envoie pas les headers CORS nécessaires
+    // La requête part quand même et s'enregistre dans le sheet.
+    await fetch(SHEET_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: 'email=' + encodeURIComponent(email)
+    });
+    // Avec no-cors on ne peut pas lire la réponse — on considère que c'est ok
+    document.getElementById('nl-form').style.display    = 'none';
+    document.getElementById('nl-success').style.display = 'block';
+  } catch (err) {
+    btn.disabled = false;
+    btn.textContent = 'S\'inscrire gratuitement';
+    errDiv.style.display = 'block';
+  }
+}
+
+
+function updateCounts() {
+  const all         = document.querySelectorAll('article[data-type]').length;
+  const prestations = document.querySelectorAll('article[data-type="prestation"]').length;
+  const actus       = document.querySelectorAll('article[data-type="actu"]').length;
+
+  document.getElementById('cnt-all').textContent        = all;
+  document.getElementById('cnt-prestation').textContent = prestations;
+  document.getElementById('cnt-actu').textContent       = actus;
+  document.getElementById('lbl-prestation').textContent = prestations + ' article' + (prestations > 1 ? 's' : '');
+  document.getElementById('lbl-actu').textContent       = actus + ' article' + (actus > 1 ? 's' : '');
+}
+
+// ── Filtre ─────────────────────────────────────────────
+function filterCat(btn, cat) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const gp = document.getElementById('group-prestation');
+  const ga = document.getElementById('group-actu');
+  gp.style.display = (cat === 'all' || cat === 'prestation') ? '' : 'none';
+  ga.style.display = (cat === 'all' || cat === 'actu')       ? '' : 'none';
+}
+
+// ── Sidebar "Récents" — triés par date DESC ────────────
+function buildRecents() {
+  const arts = Array.from(document.querySelectorAll('article[data-type]'));
+  arts.sort((a, b) => (b.dataset.date || '').localeCompare(a.dataset.date || ''));
+  const list = document.getElementById('pop-list');
+  arts.slice(0, 4).forEach((art, i) => {
+    const link  = art.querySelector('a.art-card');
+    const title = art.querySelector('h3');
+    if (!link || !title) return;
+    const item = document.createElement('a');
+    item.href = link.getAttribute('href');
+    item.className = 'pop-item';
+    item.innerHTML = `<div class="pop-n">${i + 1}</div><h4>${title.textContent}</h4>`;
+    list.appendChild(item);
+  });
+}
+
+// ── Init ───────────────────────────────────────────────
+updateCounts();
+buildRecents();
 </script>
 </body>
 </html>
