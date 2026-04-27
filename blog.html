@@ -51,9 +51,11 @@
     @media(max-width:560px){.articles-grid{grid-template-columns:1fr}}
     /* CARTE */
     .art-card{display:block;text-decoration:none;border:1px solid var(--border);border-radius:18px;overflow:hidden;background:var(--white);transition:border-color .2s,box-shadow .2s,transform .2s}
-    .art-card:hover{border-color:#c4b5fd;box-shadow:0 8px 28px rgba(167,139,250,.12);transform:translateY(-2px)}
+    a.art-card:hover{border-color:#c4b5fd;box-shadow:0 8px 28px rgba(167,139,250,.12);transform:translateY(-2px)}
     /* CARTES — taille uniforme, hauteur fixe via flexbox */
     .art-card{display:flex !important;flex-direction:column}
+    div.art-card{cursor:default}
+    a.art-card{cursor:pointer}
     .art-thumb{height:100px;display:flex;align-items:center;justify-content:center;font-size:2rem;flex-shrink:0}
     .thumb-prestation{background:linear-gradient(135deg,#eef2ff,#dde4ff)}
     .thumb-actu{background:linear-gradient(135deg,#fff4ee,#ffe0cc)}
@@ -191,54 +193,18 @@
     <div class="articles-grid">
 
       <article data-type="prestation" data-date="2026-04-27">
-        <a href="blog/page-web-auteur-nay.html" class="art-card featured">
+        <div class="art-card">
           <div class="art-thumb thumb-prestation">📖</div>
           <div class="art-card-body">
             <span class="art-badge badge-prestation">Prestation</span>
             <h3>Première réalisation client à Nay : une page web sur mesure pour accompagner un livre</h3>
             <p>Un auteur local vient de publier son dernier livre. On a créé une page web sur mesure qui accompagne ses explications et donne des informations complémentaires à ses lecteurs — une belle première mission à domicile.</p>
-            <div class="art-meta"><span>27 avril 2026</span><div class="art-meta-dot"></div><span>2 min</span></div>
+            <div class="art-meta"><span>27 avril 2026</span></div>
           </div>
-        </a>
+        </div>
       </article>
 
-      <article data-type="prestation" data-date="2025-04-15">
-        <a href="blog/documents-automatiques-devis.html" class="art-card">
-          <div class="art-thumb thumb-prestation">📋</div>
-          <div class="art-card-body">
-            <span class="art-badge badge-prestation">Prestation</span>
-            <h3>Documents automatiques : comment on génère vos devis en 3 minutes</h3>
-            <p>De la prise de commande à l'envoi du devis finalisé — comment notre service fonctionne concrètement, sans aucune saisie manuelle.</p>
-            <div class="art-meta"><span>15 avril 2025</span><div class="art-meta-dot"></div><span>5 min</span></div>
-          </div>
-        </a>
-      </article>
-
-      <article data-type="prestation" data-date="2025-04-01">
-        <a href="blog/automatisation-flux.html" class="art-card">
-          <div class="art-thumb thumb-prestation">🔗</div>
-          <div class="art-card-body">
-            <span class="art-badge badge-prestation">Prestation</span>
-            <h3>Automatisation de flux : ce qu'on connecte et comment ça tourne</h3>
-            <p>Agenda, CRM, email, facturation — comment on relie vos outils pour que tout se synchronise sans vous.</p>
-            <div class="art-meta"><span>1 avril 2025</span><div class="art-meta-dot"></div><span>4 min</span></div>
-          </div>
-        </a>
-      </article>
-
-      <article data-type="prestation" data-date="2025-03-20">
-        <a href="blog/creation-contenu-ia.html" class="art-card">
-          <div class="art-thumb thumb-prestation">✍️</div>
-          <div class="art-card-body">
-            <span class="art-badge badge-prestation">Prestation</span>
-            <h3>Création de contenu IA : 1 mois de posts en 20 minutes</h3>
-            <p>Comment on produit un mois de contenu réseaux sociaux dans votre ton et votre métier, en une seule session.</p>
-            <div class="art-meta"><span>20 mars 2025</span><div class="art-meta-dot"></div><span>3 min</span></div>
-          </div>
-        </a>
-      </article>
-
-      <!-- Placeholder — ajoutez votre 5e article prestation ici -->
+      <!-- Ajoutez vos prochaines prestations ici (div, pas a) -->
 
     </div>
   </div>
@@ -251,37 +217,9 @@
     </div>
     <div class="articles-grid">
 
-      <article data-type="actu" data-date="2025-04-08">
-        <a href="blog/lancement-gain2temps.html" class="art-card featured">
-          <div class="art-thumb thumb-actu">🚀</div>
-          <div class="art-card-body">
-            <span class="art-badge badge-actu">Actualité</span>
-            <h3>Gain2Temps est lancé : offre 100% gratuite pour les premiers clients du Béarn</h3>
-            <p>On ouvre nos portes aux artisans, commerçants et indépendants de Pau, Nay, Tarbes et Lourdes. Découvrez notre offre de lancement et comment en profiter dès maintenant.</p>
-            <div class="art-meta"><span>8 avril 2025</span><div class="art-meta-dot"></div><span>3 min</span></div>
-          </div>
-        </a>
-      </article>
-
-      <article data-type="actu" data-date="2025-03-25">
-        <a href="blog/pourquoi-ia-locale-pyrénées.html" class="art-card">
-          <div class="art-thumb thumb-actu">📍</div>
-          <div class="art-card-body">
-            <span class="art-badge badge-actu">Actualité</span>
-            <h3>Pourquoi on a choisi de lancer un service IA local dans les Pyrénées</h3>
-            <p>Le constat qui nous a poussés à créer Gain2Temps — et pourquoi les Pyrénées ont besoin d'un expert IA de proximité.</p>
-            <div class="art-meta"><span>25 mars 2025</span><div class="art-meta-dot"></div><span>4 min</span></div>
-          </div>
-        </a>
-      </article>
-
-      <!-- Placeholders — supprimez au fur et à mesure -->
+      <!-- Ajoutez vos actualités ici (div, pas a) -->
       <div class="art-placeholder" data-type="actu">
-        <p>À venir<br><em>Premier bilan après 3 mois d'activité</em></p>
-      </div>
-
-      <div class="art-placeholder" data-type="actu">
-        <p>À venir<br><em>On intervient à Lourdes — nos premiers retours</em></p>
+        <p>À venir — vos prochaines actualités</p>
       </div>
 
     </div>
