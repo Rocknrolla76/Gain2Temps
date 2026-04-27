@@ -24,13 +24,14 @@
     .blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.3;pointer-events:none}
     .b1{width:480px;height:480px;background:radial-gradient(circle,#c7d2fe,#a5b4fc);top:-100px;right:-60px}
     .b2{width:320px;height:320px;background:radial-gradient(circle,#fbcfe8,#f9a8d4);bottom:0;left:10%}
-    .hero-inner{position:relative;z-index:1;max-width:680px}
+    .hero-inner{position:relative;z-index:1}
     .hero-badge{display:inline-flex;align-items:center;gap:.4rem;background:#fff;border:1px solid var(--border);border-radius:100px;padding:.4rem 1rem;font-size:.78rem;font-weight:600;color:var(--mid);margin-bottom:1.4rem;box-shadow:0 2px 12px rgba(0,0,0,.05)}
-    .blog-hero h1{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;line-height:1.1;letter-spacing:-.04em;margin-bottom:.9rem}
+    .blog-hero h1{font-size:clamp(1.6rem,3.8vw,3rem);font-weight:800;line-height:1.1;letter-spacing:-.04em;margin-bottom:.9rem;white-space:nowrap}
     .blog-hero p{font-size:.95rem;color:var(--mid);line-height:1.7;max-width:480px}
     /* FILTRES */
     .filters-bar{background:var(--white);border-bottom:1px solid var(--border);padding:0 5%;position:sticky;top:72px;z-index:50}
-    .filters-inner{display:flex;gap:.5rem;padding:.9rem 0;align-items:center}
+    .filters-inner{display:flex;gap:.5rem;padding:.9rem 0;align-items:center;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+    .filters-inner::-webkit-scrollbar{display:none}
     .filter-btn{background:transparent;border:1.5px solid transparent;border-radius:100px;padding:.5rem 1.2rem;font-family:'Plus Jakarta Sans',sans-serif;font-size:.82rem;font-weight:600;color:var(--mid);cursor:pointer;transition:all .18s;white-space:nowrap;display:inline-flex;align-items:center;gap:.4rem}
     .filter-btn:hover{color:var(--dark);border-color:var(--border)}
     .filter-btn.active{background:var(--dark);color:#fff;border-color:var(--dark)}
@@ -55,10 +56,6 @@
     article[data-type="prestation"] .art-card{border-left-color:#22c55e}
     article[data-type="actu"]       .art-card{border-left-color:#ef4444}
     article[data-type="reflexion"]  .art-card{border-left-color:#eab308}
-    .art-thumb{height:100px;display:flex;align-items:center;justify-content:center;font-size:2rem;flex-shrink:0}
-    .thumb-prestation{background:linear-gradient(135deg,#eef2ff,#dde4ff)}
-    .thumb-actu{background:linear-gradient(135deg,#fff4ee,#ffe0cc)}
-    .thumb-reflexion{background:linear-gradient(135deg,#f0fdf4,#dcfce7)}
     .art-card-body{padding:1.2rem 1.3rem;display:flex;flex-direction:column;flex:1}
     .art-card-body h3{font-size:.88rem;font-weight:700;letter-spacing:-.02em;color:var(--dark);line-height:1.4;margin-bottom:.4rem}
     .art-card-body p{font-size:.78rem;color:var(--mid);line-height:1.55;margin-bottom:.75rem;flex:1}
@@ -101,7 +98,7 @@
     .c-prestation{background:linear-gradient(90deg,var(--gs),var(--gm));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
     .c-actu{background:linear-gradient(90deg,var(--gm),var(--ge));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
     .c-reflexion{background:linear-gradient(90deg,var(--gs),var(--ge));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-    @media(max-width:768px){nav{padding:1rem 4%}.nav-links{display:none}.blog-hero{padding:6rem 4% 3rem}.blog-layout{padding:2.5rem 4%}.filters-bar{padding:0 4%}}
+    @media(max-width:768px){nav{padding:1rem 4%}.nav-links{display:none}.blog-hero{padding:6rem 4% 3rem}.blog-layout{padding:2.5rem 4%}.filters-bar{padding:0 4%}.blog-hero h1{white-space:normal}}
   </style>
 </head>
 <body>
@@ -169,7 +166,6 @@
   ─────────────────
   <article data-type="prestation" data-date="2025-06-01">
     <a href="blog/mon-article.html" class="art-card">
-      <div class="art-thumb thumb-prestation">🔧</div>
       <div class="art-card-body">
         <h3>Mon titre d'article</h3>
         <p>Un court extrait de 2 à 3 lignes qui donne envie de lire la suite.</p>
@@ -196,7 +192,6 @@
 
     <article data-type="prestation" data-date="2026-04-27">
       <div class="art-card">
-        <div class="art-thumb thumb-prestation">📖</div>
         <div class="art-card-body">
           <h3>Première réalisation client à Nay : une page web sur mesure pour accompagner un livre</h3>
           <p>Un auteur local vient de publier son dernier livre. On a créé une page web sur mesure qui accompagne ses explications et donne des informations complémentaires à ses lecteurs — une belle première mission à domicile.</p>
@@ -207,7 +202,6 @@
 
     <article data-type="actu" data-date="2026-04-27">
       <div class="art-card">
-        <div class="art-thumb thumb-actu">🚀</div>
         <div class="art-card-body">
           <h3>Gain2Temps est lancé : offre 100% gratuite pour les premiers clients du Béarn</h3>
           <p>On ouvre nos portes aux artisans, commerçants et indépendants de Pau, Nay, Tarbes et Lourdes. Première mission gratuite en échange d'un témoignage.</p>
@@ -218,7 +212,6 @@
 
     <article data-type="reflexion" data-date="2026-04-27">
       <a href="blog/vibe-coding-nouveau-paradigme.html" class="art-card">
-        <div class="art-thumb thumb-reflexion">🧠</div>
         <div class="art-card-body">
           <h3>Le vibe coding : un nouveau paradigme de la création numérique</h3>
           <p>L'IA ne change pas juste nos outils — elle change notre façon de penser. On passe d'exécutant à architecte. On ne code plus ligne par ligne : on dialogue, on orchestre, on explore.</p>
