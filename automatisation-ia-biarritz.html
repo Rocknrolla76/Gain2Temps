@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <title>Automatisation IA à Biarritz — Gain2Temps</title>
+  <meta name="description" content="Gain2Temps à Biarritz : automatisation IA, création de contenu et sites web pour commerces, hôtels, surf shops et indépendants de la Côte Basque. Offre de lancement gratuite." />
+  <meta name="keywords" content="intelligence artificielle, IA, automatisation, Biarritz, Côte Basque, Pays Basque, TPE, artisans, création contenu, page web, gain de temps" />
+  <meta property="og:title" content="Automatisation IA à Biarritz — Gain2Temps" />
+  <meta property="og:description" content="L'IA au service des pros de Biarritz et de la Côte Basque. Automatisation, création de contenu, pages web. Offre de lancement 100% gratuite." />
+  <meta property="og:type" content="website" />
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"LocalBusiness","name":"Gain2Temps","description":"Services d'intelligence artificielle et automatisation pour TPE, artisans et indépendants à Biarritz et sur la Côte Basque.","areaServed":["Biarritz","Côte Basque","Pays Basque","Anglet","Bayonne","Pyrénées-Atlantiques"],"serviceType":["Automatisation IA","Création de contenu","Page web","Documents automatiques"]}
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>emailjs.init('tx7Dbtr6JypewJUj9');</script>
+
+  <style>
+    :root {
+      --white:#ffffff; --bg:#f8f9ff; --bg-peach:#fff4ee;
+      --dark:#0f0f1a; --mid:#4a4a6a; --light:#9090b0; --border:#e8e8f0;
+      --gs:#6ec6f5; --gm:#a78bfa; --ge:#f472b6;
+      --ora:#ff8c5a; --ora-bg:#fff0e8;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--white);color:var(--dark);overflow-x:hidden}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+    .nav-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:.9rem 5%}
+    .nav-logo{font-size:1.25rem;font-weight:800;letter-spacing:-.03em;color:var(--dark);text-decoration:none}
+    .grad{background:linear-gradient(90deg,var(--gs),var(--gm),var(--ge));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .nav-links{display:flex;gap:2rem;align-items:center}
+    .nav-links a{font-size:.875rem;font-weight:500;color:var(--mid);text-decoration:none;transition:color .2s}
+    .nav-links a:hover{color:var(--dark)}
+    .btn-dark{background:var(--dark);color:#fff !important;padding:.6rem 1.4rem;border-radius:100px;font-size:.875rem;font-weight:600;text-decoration:none;transition:opacity .2s,transform .2s;display:inline-flex;align-items:center;gap:.4rem;border:none;cursor:pointer;font-family:inherit}
+    .btn-dark:hover{opacity:.85;transform:translateY(-1px)}
+
+    /* HERO */
+    .hero{min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:9rem 5% 5rem;position:relative;overflow:hidden;background:linear-gradient(180deg,#eef2ff 0%,#faf5ff 45%,#fff 100%)}
+    .blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.4;pointer-events:none}
+    .b1{width:520px;height:520px;background:radial-gradient(circle,#c7d2fe,#a5b4fc);top:-120px;left:-80px}
+    .b2{width:420px;height:420px;background:radial-gradient(circle,#fbcfe8,#f9a8d4);top:40px;right:-60px}
+    .hero-badge{display:inline-flex;align-items:center;gap:.45rem;background:#fff;border:1px solid var(--border);border-radius:100px;padding:.4rem 1rem;font-size:.8rem;font-weight:600;color:var(--mid);margin-bottom:2rem;box-shadow:0 2px 12px rgba(0,0,0,.06);position:relative;z-index:1}
+    .dot{width:6px;height:6px;background:#22c55e;border-radius:50%;animation:blink 2s infinite}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+    .hero h1{font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:800;line-height:1.1;letter-spacing:-.04em;margin-bottom:1.5rem;max-width:800px;position:relative;z-index:1}
+    .hero-sub{font-size:1.05rem;color:var(--mid);line-height:1.7;max-width:600px;margin-bottom:2.5rem;position:relative;z-index:1}
+    .hero-actions{display:flex;gap:1rem;align-items:center;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+    .btn-outline{background:transparent;color:var(--dark);padding:.6rem 1.4rem;border-radius:100px;font-size:.875rem;font-weight:600;text-decoration:none;border:1.5px solid var(--border);transition:border-color .2s,background .2s;display:inline-flex;align-items:center;gap:.4rem}
+    .btn-outline:hover{border-color:var(--dark);background:var(--bg)}
+    .hero-note{margin-top:1.2rem;font-size:.8rem;color:var(--light);position:relative;z-index:1}
+
+    /* SECTIONS */
+    section{padding:5rem 5%}
+    section > *{max-width:1160px;margin-left:auto;margin-right:auto}
+    .stag{display:inline-flex;align-items:center;gap:.4rem;background:var(--ora-bg);border:1px solid #ffd0b5;border-radius:100px;padding:.35rem .9rem;font-size:.75rem;font-weight:600;color:var(--ora);margin-bottom:1.2rem}
+    h2{font-size:clamp(1.8rem,3vw,2.8rem);font-weight:800;letter-spacing:-.04em;line-height:1.15;margin-bottom:1rem}
+    .ssub{font-size:1rem;color:var(--mid);line-height:1.7;max-width:none;margin-bottom:3rem}
+
+    /* SECTEURS */
+    .secteurs{background:var(--bg-peach)}
+    .sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem}
+    .scard{background:#fff;border:1px solid #ffd0b5;border-radius:18px;padding:1.8rem;transition:transform .2s,box-shadow .2s}
+    .scard:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.07)}
+    .sicon{font-size:2rem;margin-bottom:1rem}
+    .scard h3{font-size:1rem;font-weight:700;margin-bottom:.5rem}
+    .scard p{font-size:.875rem;color:var(--mid);line-height:1.6}
+
+    /* SERVICES */
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem;margin-top:2rem}
+    .srv-card{background:var(--bg);border:1px solid var(--border);border-radius:20px;padding:2rem;transition:transform .25s,box-shadow .25s,border-color .25s}
+    .srv-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.08);border-color:#c4b5fd}
+    .srv-num{font-size:.72rem;font-weight:700;letter-spacing:.1em;color:var(--light);margin-bottom:1rem;text-transform:uppercase}
+    .srv-card h3{font-size:1.15rem;font-weight:700;margin-bottom:.7rem;letter-spacing:-.02em}
+    .srv-card p{font-size:.875rem;color:var(--mid);line-height:1.65}
+
+    /* OFFRE */
+    .launch{background:var(--dark);color:#fff;text-align:center;position:relative;overflow:hidden;padding:5rem 5%}
+    .lb1{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(167,139,250,.18),transparent 70%);top:-150px;left:-100px;pointer-events:none}
+    .lb2{position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(244,114,182,.13),transparent 70%);bottom:-100px;right:-80px;pointer-events:none}
+    .lc{position:relative;z-index:1;max-width:1160px;margin:0 auto}
+    .launch .stag{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.15);color:#fbb6a0}
+    .launch h2{color:#fff;margin-bottom:.8rem}
+    .launch .ssub{color:rgba(255,255,255,.55);margin:0 auto 2.5rem}
+    .lurg{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,140,90,.15);border:1px solid rgba(255,140,90,.3);border-radius:100px;padding:.5rem 1.2rem;font-size:.82rem;font-weight:600;color:#ffb38a;margin-bottom:2.5rem}
+    .lcards{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-bottom:3rem}
+    .lcard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:1.5rem 1rem;width:160px;min-height:110px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+    .lcard .ic{font-size:1.6rem;margin-bottom:.7rem}
+    .lcard p{font-size:.83rem;color:rgba(255,255,255,.65);line-height:1.5}
+    .btn-white{background:#fff;color:var(--dark);padding:.85rem 2.2rem;border-radius:100px;font-size:.95rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:opacity .2s,transform .2s}
+    .btn-white:hover{opacity:.9;transform:translateY(-2px)}
+
+    /* CONTACT */
+    .contact{padding:5rem 5%}
+    .cwrap{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:start;max-width:1000px;margin:0 auto}
+    .cinfo p{font-size:.9rem;color:var(--mid);line-height:1.7;margin-bottom:1.5rem}
+    .cdet{display:flex;align-items:flex-start;gap:.8rem;font-size:.875rem;color:var(--mid);margin-bottom:.9rem;line-height:1.5}
+    .cdet .ic{font-size:1rem;margin-top:1px;flex-shrink:0}
+    .fbox{background:var(--bg);border:1px solid var(--border);border-radius:24px;padding:2.5rem}
+    .fbox h3{font-size:1.2rem;font-weight:700;letter-spacing:-.02em;margin-bottom:.4rem}
+    .fdesc{font-size:.85rem;color:var(--mid);margin-bottom:1.8rem}
+    form{display:flex;flex-direction:column;gap:1rem}
+    .frow{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .fg{display:flex;flex-direction:column;gap:.35rem}
+    label{font-size:.78rem;font-weight:600;color:var(--mid)}
+    input,select,textarea{font-family:'Plus Jakarta Sans',sans-serif;font-size:.875rem;color:var(--dark);background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:.75rem 1rem;transition:border-color .2s,box-shadow .2s;outline:none;width:100%}
+    input:focus,select:focus,textarea:focus{border-color:#a78bfa;box-shadow:0 0 0 3px rgba(167,139,250,.12)}
+    textarea{resize:vertical;min-height:100px}
+    .bsub{width:100%;justify-content:center;font-size:.95rem;padding:.9rem}
+    .fnote{font-size:.75rem;color:var(--light);text-align:center}
+    .fsuccess{display:none;text-align:center;padding:2.5rem;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:16px}
+    .fsuccess .big{font-size:2.5rem;margin-bottom:.8rem}
+    .fsuccess h3{font-size:1.3rem;font-weight:700;color:#15803d;margin-bottom:.5rem}
+    .fsuccess p{font-size:.9rem;color:#4a7c59}
+
+    /* FOOTER */
+    footer{background:var(--bg);border-top:1px solid var(--border);padding:2rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+    .flogo{font-size:1.1rem;font-weight:800;letter-spacing:-.03em}
+    footer p{font-size:.8rem;color:var(--light)}
+    .flinks{display:flex;gap:1.5rem}
+    .flinks a{font-size:.8rem;color:var(--light);text-decoration:none;transition:color .2s}
+    .flinks a:hover{color:var(--dark)}
+
+    /* BREADCRUMB */
+    .breadcrumb{padding:5.5rem 5% 0;font-size:.82rem;color:var(--light)}
+    .breadcrumb a{color:var(--gm);text-decoration:none;-webkit-text-fill-color:initial}
+    .breadcrumb a:hover{text-decoration:underline}
+
+    @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+    .fu{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+    .fu.vis{opacity:1;transform:translateY(0)}
+    .hc{animation:fadeUp .8s ease both}
+    @media(max-width:768px){nav{padding:0}.nav-links{display:none}.cwrap{grid-template-columns:1fr;gap:2.5rem}.frow{grid-template-columns:1fr}footer{flex-direction:column;text-align:center}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Gain<span class="grad">2</span>Temps</a>
+    <div class="nav-links">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#exemples">Exemples</a>
+      <a href="index.html#lancement">Offre gratuite</a>
+      <a href="#contact" class="btn-dark">Je veux en profiter →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">Accueil</a> › Biarritz
+</div>
+
+<section class="hero" id="accueil">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="hc">
+    <div class="hero-badge"><span class="dot"></span>🌊 Biarritz · Côte Basque</div>
+    <h1>L'IA au service des pros<br>de <span class="grad">Biarritz</span></h1>
+    <p class="hero-sub">Surf shops, hôtels, restaurants, commerces… Automatisez vos tâches répétitives et boostez votre visibilité sur la Côte Basque. Basés à Nay, nous intervenons sur site ou à distance.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-dark">Profiter de l'offre gratuite →</a>
+      <a href="#services" class="btn-outline">Découvrir les services</a>
+    </div>
+    <p class="hero-note">⚡ Offre de lancement 100% gratuite — places limitées</p>
+  </div>
+</section>
+
+<section class="secteurs" id="secteurs">
+  <div class="fu">
+    <div class="stag">🏄 Secteurs à Biarritz</div>
+    <h2>Un tissu économique unique,<br>des <span class="grad">besoins bien particuliers</span></h2>
+    <p class="ssub">Biarritz et la Côte Basque ont leur propre rythme : saison touristique intense, clientèle internationale, commerce de niche. L'IA peut vous aider à suivre la cadence.</p>
+  </div>
+  <div class="sgrid fu">
+    <div class="scard"><div class="sicon">🏄</div><h3>Surf shops & sports outdoor</h3><p>Fiches produits multilingues, newsletters saisonnières, automatisation des commandes et relances clients.</p></div>
+    <div class="scard"><div class="sicon">🏨</div><h3>Hôtels & hébergements</h3><p>Réponses automatiques aux avis, emails de bienvenue personnalisés, contenu pour OTAs et réseaux sociaux.</p></div>
+    <div class="scard"><div class="sicon">🍽️</div><h3>Restaurants & bars</h3><p>Menus traduits, posts Instagram automatis&eacute;s, gestion des réservations et réponses aux avis Google.</p></div>
+    <div class="scard"><div class="sicon">🛍️</div><h3>Commerces & boutiques</h3><p>Descriptions produits, campagnes email, pages web locales optimisées pour le référencement Biarritz.</p></div>
+    <div class="scard"><div class="sicon">💆</div><h3>Bien-être & beauty</h3><p>Planning de contenu Instagram, confirmations de RDV automatiques, newsletters fidélisation.</p></div>
+    <div class="scard"><div class="sicon">🏗️</div><h3>Artisans & pros du bâtiment</h3><p>Devis automatiques, suivi chantier, communication client sans effort administratif.</p></div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="fu">
+    <div class="stag">⚙️ Nos services</div>
+    <h2>Quatre services concrets<br>pour les pros de <span class="grad">Biarritz</span></h2>
+    <p class="ssub">Pas de jargon, pas de formation nécessaire. Je m'occupe de tout depuis Nay, en intervention sur site ou à distance.</p>
+  </div>
+  <div class="services-grid fu">
+    <div class="srv-card"><div class="srv-num">Service 01</div><h3>Création de contenu</h3><p>Posts, newsletters, descriptions produits en français et en anglais. Un mois de contenu en 20 minutes, adapté à votre ton et à votre clientèle internationale.</p></div>
+    <div class="srv-card"><div class="srv-num">Service 02</div><h3>Documents automatiques</h3><p>Devis, factures, confirmations de réservation générés en quelques clics. Fini la saisie manuelle.</p></div>
+    <div class="srv-card"><div class="srv-num">Service 03</div><h3>Automatisation de flux</h3><p>Relances clients, réponses aux avis, alertes, synchronisation de vos outils. Tout tourne en fond.</p></div>
+    <div class="srv-card"><div class="srv-num">Service 04</div><h3>Page web professionnelle</h3><p>Une page claire, moderne, bien référencée pour Biarritz et la Côte Basque. En ligne en 48h.</p></div>
+  </div>
+</section>
+
+<section class="launch" id="lancement">
+  <div class="lb1"></div><div class="lb2"></div>
+  <div class="lc fu">
+    <div class="stag">🎁 Offre de lancement</div>
+    <h2>Gratuit pour les <span class="grad">premiers arrivés</span></h2>
+    <p class="ssub">Je cherche mes premiers clients pilotes sur Biarritz et la Côte Basque. En échange de votre confiance et d'un témoignage, je réalise votre première mission gratuitement.</p>
+    <div class="lurg">🔥 Places limitées — offre valable jusqu'à épuisement</div>
+    <div class="lcards">
+      <div class="lcard"><div class="ic">🎁</div><p>100% gratuit<br>sans engagement</p></div>
+      <div class="lcard"><div class="ic">📍</div><p>Réservé aux pros<br>de la Côte Basque</p></div>
+      <div class="lcard"><div class="ic">⚡</div><p>Résultat livré<br>sous 7 jours</p></div>
+      <div class="lcard"><div class="ic">💬</div><p>Un témoignage<br>en retour, c'est tout</p></div>
+    </div>
+    <a href="#contact" class="btn-white">Je veux ma mission gratuite →</a>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="cwrap fu">
+    <div class="cinfo">
+      <div class="stag">✉️ Contact</div>
+      <h2>Parlons de<br><span class="grad">votre projet</span></h2>
+      <p>Remplissez le formulaire, je vous réponds sous 24h pour fixer un échange rapide et gratuit. Pas de jargon, pas de pression.</p>
+      <div class="cdet"><span class="ic">📍</span><span>Nay — intervention sur Biarritz &amp; Côte Basque</span></div>
+      <div class="cdet"><span class="ic">🌊</span><span>Biarritz, Anglet, Bayonne et tout le Pays Basque</span></div>
+      <div class="cdet"><span class="ic">🤝</span><span>Offre gratuite pour les premiers clients pilotes</span></div>
+      <div class="cdet"><span class="ic">⏱️</span><span>Réponse sous 48h garantie</span></div>
+    </div>
+    <div class="fbox">
+      <h3>Demandez votre mission gratuite</h3>
+      <p class="fdesc">Places limitées — réservez la vôtre dès maintenant.</p>
+      <form id="contactForm">
+        <div class="frow">
+          <div class="fg"><label>Prénom</label><input type="text" placeholder="Marie" required /></div>
+          <div class="fg"><label>Nom</label><input type="text" placeholder="Dupont" required /></div>
+        </div>
+        <div class="fg"><label>Votre métier / activité</label><input type="text" placeholder="Surf shop, hôtel, restaurant…" required /></div>
+        <div class="fg"><label>Email</label><input type="email" placeholder="marie@exemple.fr" required /></div>
+        <div class="fg">
+          <label>Service souhaité</label>
+          <select required>
+            <option value="" disabled selected>Choisissez un service</option>
+            <option>Création de contenu</option>
+            <option>Documents automatiques</option>
+            <option>Automatisation de flux</option>
+            <option>Page web professionnelle</option>
+            <option>Je veux un audit gratuit</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="fg"><label>Ce qui vous prend le plus de temps en ce moment</label><textarea placeholder="Ex : je passe des heures à répondre aux avis clients…"></textarea></div>
+        <button type="submit" class="btn-dark bsub">Envoyer ma demande gratuite →</button>
+        <p class="fnote">Vos données ne sont jamais partagées. Réponse sous 48h.</p>
+      </form>
+      <div class="fsuccess" id="fs"><div class="big">🎉</div><h3>Demande envoyée !</h3><p>Merci ! Je vous réponds sous 48h pour organiser votre première mission gratuite.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="flogo">Gain<span class="grad">2</span>Temps</div>
+  <p>© 2026 Gain2Temps — Nay, Pau, Tarbes, Lourdes &amp; Biarritz, Béarn</p>
+  <div class="flinks">
+    <a href="index.html">Accueil</a>
+    <a href="index.html#services">Services</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(
+    e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('vis'); obs.unobserve(x.target) } }),
+    {threshold:.1}
+  );
+  document.querySelectorAll('.fu').forEach(el => obs.observe(el));
+
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('.bsub');
+    btn.disabled = true;
+    btn.textContent = 'Envoi en cours…';
+    const params = {
+      prenom:           this.querySelector('input[placeholder="Marie"]').value,
+      nom:              this.querySelector('input[placeholder="Dupont"]').value,
+      metier:           this.querySelector('input[placeholder="Surf shop, hôtel, restaurant…"]').value,
+      email_expediteur: this.querySelector('input[type="email"]').value,
+      service:          this.querySelector('select').value,
+      message:          this.querySelector('textarea').value
+    };
+    emailjs.send('service_8obnlgg', 'template_vb2jjz8', params)
+      .then(() => {
+        this.style.display = 'none';
+        document.getElementById('fs').style.display = 'block';
+      })
+      .catch((err) => {
+        console.error('EmailJS error:', err);
+        btn.disabled = false;
+        btn.textContent = 'Envoyer ma demande gratuite →';
+        alert('Une erreur est survenue. Merci de réessayer ou de nous contacter directement.');
+      });
+  });
+</script>
+</body>
+</html>
